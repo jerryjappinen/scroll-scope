@@ -9,13 +9,15 @@
 
 <p>Include and initialize plugin:</p>
 
-<pre><code>&lt;div class="my-scrollable-element" <strong>data-scroll="scope"</strong>&gt;
+```html
+<div class="my-scrollable-element" <strong>data-scroll="scope"</strong>>
 
-&lt;script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js">&lt;/script&gt;
-&lt;script type="text/javascript" src="scroll-scope.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript"&gt;
-	<strong>$(document).scrollScope();</strong>
-&lt;/script&gt;</code></pre>
+<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="scroll-scope.js"></script>
+<script type="text/javascript">
+	$(document).scrollScope();
+</script>
+```
 
 
 
@@ -23,14 +25,18 @@
 
 <p>By default, <code>data-scroll="scope"</code> elements are targeted, but you can choose this upon initialization:</p>
 
-<pre><code>$(document).scrollScope(<strong>'.results, .some-scrollable-element'</strong>);</code></pre>
+```js
+$(document).scrollScope('.results, .some-scrollable-element');
+```
 
 <p>By default, the plugin catches the events <code>DOMMouseScroll mousewheel</code>, but you can choose this upon initialization:</p>
 
-<pre><code>$(document).scrollScope(null, 'DOMMouseScroll mousewheel <strong>my:event</strong>');</code></pre>
+```js
+$(document).scrollScope(null, 'DOMMouseScroll mousewheel my:event');
+```
 
 
 
 <h2>Credits</h2>
 
-<p>Plugin by <a href="http://eiskis.net/">Jerry Jäppinen</a> (under<a href="https://github.com/Eiskis/scroll-scope/blob/master/LICENSE">MIT</a>).</p>
+<p>Plugin by <a href="http://eiskis.net/">Jerry Jäppinen</a> (under <a href="https://github.com/Eiskis/scroll-scope/blob/master/LICENSE">MIT</a>).</p>
