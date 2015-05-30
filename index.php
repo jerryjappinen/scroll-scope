@@ -109,6 +109,7 @@ require_once 'Parsedown.php';
 				padding: 20px;
 				display: block;
 				border: 1px solid black;
+				font-weight: bold;
 			}
 			@media screen and (min-width: 480px) {
 				.container {
@@ -274,21 +275,31 @@ require_once 'Parsedown.php';
 			<p>Usually the parent is the document, meaning that the user will continue moving down the page when attempting to scroll an individual container on the page, which is quite annoying. Compare yourself:</p>
 
 			<div class="pull">
+
+				<div class="half">
+					<p>No scroll-scope;</p>
+				</div>
+				<div class="half">
+					<p>With <code>data-scroll="scope":</code></p>
+				</div>
+				<div class="clear"></div>
+
 				<div class="half">
 
-					<p>No scroll-scope</p>
-
 					<div class="container height-1">
-						<div class="container height-2"></div>
+						<div class="container height-2">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+						</div>
 					</div>
 
 				</div>
+
 				<div class="half">
 
-					<p>With <code>data-scroll="scope"</code></p>
-
 					<div class="container height-1" data-scroll="scope">
-						<div class="container height-2"></div>
+						<div class="container height-2">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+						</div>
 					</div>
 
 				</div>
@@ -314,8 +325,6 @@ require_once 'Parsedown.php';
 					<li><a href=".">Search result 5</a></li>
 					<li><a href=".">Search result 6</a></li>
 				</ul>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
@@ -377,7 +386,12 @@ pre code {
 				<div class="container height-1" data-scroll="scope">
 					<div class="container">
 						<div class="container height-3" data-scroll="scope">
-							<div class="container height-4"></div>
+							<div class="container height-4">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+							</div>
 						</div>
 					</div>
 				</div>
