@@ -3,16 +3,15 @@
 
 Small JS plugin to keep parent elements still when scrolling an element past their boundaries. Simple fix to a problem that shouldn't exist.
 
-Demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope), source at [GitHub](https://github.com/Eiskis/scroll-scope).
+Commonly in scroll interaction, user hovers a mouse cursor over a scrollable element and uses trackpad or mouse wheel to scroll the element. When an element reaches its boundary, its parent element continues scrolling.
+
+Usually this means that the user will continue moving down the page when attempting to interact with an specific container on the page. This is a common issue with dropdown menus and modal dialogs.
 
 
 
-## Get it
+## Get the plugin
 
-Download:
-
-- [scroll-scope.min.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.min.js) for production
-- [scroll-scope.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.js) for development
+Download [scroll-scope.min.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.min.js) for production or [scroll-scope.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.js) for development. Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope), demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope).
 
 Install with Bower:
 

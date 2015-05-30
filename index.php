@@ -272,7 +272,9 @@ require_once 'Parsedown.php';
 
 			<p>Commonly in scroll interaction, the user hovers their mouse cursor over a scrollable element and uses the trackpad or a mouse wheel to scroll the element up or down. When an element reaches its boundary, its parent element continues to be scrolled.</p>
 
-			<p>Usually the parent is the document, meaning that the user will continue moving down the page when attempting to scroll an individual container on the page, which is quite annoying. Compare yourself:</p>
+			<p>Usually the parent is the document, meaning that the user will continue moving down the page when attempting to scroll an individual container on the page, which is quite annoying. This is a common issue with dropdown menus and modal dialogs.</p>
+
+			<p>Compare yourself:</p>
 
 			<div class="pull">
 
