@@ -7,12 +7,15 @@ Small JS plugin to keep parent elements still when scrolling an element past the
 
 ## Usage
 
+Add the `data-scroll="scope"` attribute to any scrollable element on the page.
+
+```html
+<div class="my-scrollable-element" data-scroll="scope">
+```
+
 Include and initialize plugin:
 
 ```html
-<!-- A scrollable element on the page -->
-<div class="my-scrollable-element" data-scroll="scope">
-
 <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="scroll-scope.js"></script>
 <script type="text/javascript">
@@ -40,6 +43,6 @@ $(document).scrollScope(null, 'DOMMouseScroll mousewheel my:event');
 
 
 
-<h2>Credits</h2>
+## Credits
 
 Plugin by [Jerry Jäppinen](http://eiskis.net/) (under [MIT](https://github.com/Eiskis/scroll-scope/blob/master/LICENSE)).
