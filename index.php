@@ -38,6 +38,10 @@ require_once 'Parsedown.php';
 
 		<style type="text/css">
 
+			* {
+				-webkit-overflow-scrolling: touch;
+			}
+
 			html {
 				color: #333;
 				font-family: "Helvetica Neue", "Helvetica", "Roboto", "Segoe UI", "Open Sans", "Arial", sans-serif;
