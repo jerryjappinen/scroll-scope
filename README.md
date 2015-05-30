@@ -1,16 +1,17 @@
 
-<h1><em>scroll-scope.js</em></h1>
+# *scroll-scope.js*
 
-<p>Small JS plugin to keep parent elements still when scrolling an element past their boundaries</p>
+Small JS plugin to keep parent elements still when scrolling an element past their boundaries. See demos at []();
 
 
 
-<h2>Usage</h2>
+## Usage
 
-<p>Include and initialize plugin:</p>
+Include and initialize plugin:
 
 ```html
-<div class="my-scrollable-element" <strong>data-scroll="scope"</strong>>
+<!-- A scrollable element on the page -->
+<div class="my-scrollable-element" data-scroll="scope">
 
 <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="scroll-scope.js"></script>
@@ -19,17 +20,19 @@
 </script>
 ```
 
+The plugin attaches itself on the document (or any parent container you choose), so you don't need to bind it for any new scrollable elements you might load via AJAX or otherwise insert into the DOM after initialization.
 
 
-<h3>Options</h3>
 
-<p>By default, <code>data-scroll="scope"</code> elements are targeted, but you can choose this upon initialization:</p>
+### Options
+
+By default, `data-scroll="scope"` elements are targeted, but you can choose this upon initialization:
 
 ```js
 $(document).scrollScope('.results, .some-scrollable-element');
 ```
 
-<p>By default, the plugin catches the events <code>DOMMouseScroll mousewheel</code>, but you can choose this upon initialization:</p>
+By default, the plugin catches the events <code>DOMMouseScroll mousewheel</code>, but you can choose this upon initialization:
 
 ```js
 $(document).scrollScope(null, 'DOMMouseScroll mousewheel my:event');
@@ -39,4 +42,4 @@ $(document).scrollScope(null, 'DOMMouseScroll mousewheel my:event');
 
 <h2>Credits</h2>
 
-<p>Plugin by <a href="http://eiskis.net/">Jerry Jäppinen</a> (under <a href="https://github.com/Eiskis/scroll-scope/blob/master/LICENSE">MIT</a>).</p>
+Plugin by [Jerry Jäppinen](http://eiskis.net/) (under [MIT](https://github.com/Eiskis/scroll-scope/blob/master/LICENSE)).
