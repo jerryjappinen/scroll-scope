@@ -12,7 +12,7 @@
 		var mainContainer = this;
 
 		// Some options
-		var events = targetEvents || 'DOMMouseScroll mousewheel';
+		var events = targetEvents || 'DOMMouseScroll mousewheel scroll touchmove';
 		var selector = targetSelector || '[data-scroll="scope"]';
 
 
