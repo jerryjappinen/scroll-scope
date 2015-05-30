@@ -9,7 +9,7 @@ Demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope), source at [G
 
 ## Get it
 
-- Download minified [scroll-scope.min.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope-min.js) for production
+- Download minified [scroll-scope.min.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.min.js) for production
 - Download [scroll-scope.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.js) for development
 - Install with `bower install scroll-scope`
 
