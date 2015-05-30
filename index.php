@@ -95,12 +95,20 @@ require_once 'Parsedown.php';
 					margin-left: -2em;
 					margin-right: -2em;
 				}
+				.modal pre {
+					margin-left: 0;
+					margin-right: 0;
+				}
 			}
 			@media screen and (min-width: 54em) {
 				pre,
 				.pull {
 					margin-left: -6em;
 					margin-right: -6em;
+				}
+				.modal pre {
+					margin-left: 0;
+					margin-right: 0;
 				}
 			}
 
@@ -254,6 +262,32 @@ require_once 'Parsedown.php';
 				}
 			}
 
+			/*Modal dialog*/
+			.modal {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+			.modal.closed {
+				display: none;
+			}
+			.modal-content {
+				box-sizing: border-box;
+				overflow: scroll;
+				position: fixed;
+				top: 10%;
+				left: 20%;
+				width: 60%;
+				height: 30em;
+				max-height: 80%;
+				background-color: #fff;
+				border-radius: 3px;
+				padding: 1.5em 2em;
+			}
+
 		</style>
 
 	</head>
@@ -339,6 +373,44 @@ require_once 'Parsedown.php';
 
 
 
+			<h3>Real-life use case: modal dialog</h3>
+
+			<div class="modal closed" data-action="modal" data-scroll="scope">
+				<div class="modal-content" data-scroll="scope">
+
+					<p>Modal dialog implementations tend to scroll the document. In this trivial custom dialog, the code that avoids this problem looks like this:</p>
+
+					<pre><code>&lt;div class="modal" data-scroll="scope"&gt;
+	&lt;div class="modal-content" data-scroll="scope"&gt;
+
+		...
+
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+					<p>Scroll down or <a href="." data-action="modal">close this dialog</a>.</p>
+
+					<h3>Lorem ipsum</h3>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+					<p><a href="." data-action="modal">Close dialog</a></p>
+
+				</div>
+			</div>
+
+			<p><a href="." data-action="modal">Show a modal dialog</a></p>
+
+
+
 			<h3>Real-life use case: code block</h3>
 
 			<pre data-scroll="scope"><code>/*A page with lots of code blocks could set a max-height for them*/
@@ -416,6 +488,15 @@ pre code {
 			// Dummy form
 			$('.dummyform').on('click', 'a', function (e) {
 				e.preventDefault();
+			});
+
+			// Modal dialog
+			$(document).on('click', '[data-action="modal"]', function (e) {
+				e.preventDefault();
+				$('.modal').toggleClass('closed');
+			});
+			$(document).on('click', '.modal-content', function (e) {
+				e.stopPropagation();
 			});
 
 		</script>
