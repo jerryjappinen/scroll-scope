@@ -264,8 +264,9 @@ require_once 'Parsedown.php';
 
 			/*Modal dialog*/
 			.modal {
-				z-index: 10;
 				position: fixed;
+				z-index: 10;
+				overflow: hidden;
 				left: 0;
 				top: 0;
 				width: 100%;
@@ -276,10 +277,10 @@ require_once 'Parsedown.php';
 				display: none;
 			}
 			.modal-content {
-				z-index: 20;
-				box-sizing: border-box;
-				overflow: scroll;
 				position: fixed;
+				z-index: 20;
+				overflow: auto;
+				box-sizing: border-box;
 				top: 10%;
 				left: 20%;
 				width: 60%;
