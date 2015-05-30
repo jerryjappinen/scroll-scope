@@ -212,6 +212,7 @@ require_once 'Parsedown.php';
 				overflow: auto;
 				max-height: 16em;
 				border-radius: 3px;
+				font-size: inherit;
 			}
 			.hljs,
 			code {
