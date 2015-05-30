@@ -60,12 +60,16 @@
 			if (self.scope.length) {
 				self.off(self.targetEvents, self.targetSelector, self.onElementScroll);
 			}
+			return self;
 		};
 
-		// Bind to main container upon init
-		if (self.scope.length) {
-			self.scope.on(self.targetEvents, self.targetSelector, self.onElementScroll);
-		}
+		// Bind to main container
+		self.bind = function () {
+			if (self.scope.length) {
+				self.scope.on(self.targetEvents, self.targetSelector, self.onElementScroll);
+			}
+			return self;
+		};
 
 	};
 
@@ -73,7 +77,7 @@
 
 	// Factory
 	scrollScope.attach = function (container, options) {
-		return new scrollScope(container, options);
+		return (new scrollScope(container, options)).bind();
 	};
 
 
@@ -91,3 +95,18 @@
 	}
 
 }());
+
+
+(function ($) {
+
+	$.fn.scrollScope = function (options) {
+
+		var settings = $.extend({
+			color: "#556b2f",
+			backgroundColor: "white"
+		}, options);
+
+		return this.on(self.targetEvents, self.targetSelector, self.onElementScroll);
+	};
+
+}(jQuery));

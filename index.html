@@ -8,62 +8,84 @@
 			html {
 				color: #333;
 				font-family: sans-serif;
+				line-height: 1.4;
+				-webkit-font-smoothing: antialiased;
 			}
 
 			.body {
-				padding: 3% 6% 6% 6%;
+				max-width: 50em;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 2% 6% 8% 6%;
+			}
+
+			h2 {
+				margin-top: 6%;
+				padding-top: 6%;
+				border-top: 1px solid #eee;
+			}
+
+			h3 {
+				margin-top: 6%;
+			}
+
+			a {
+				color: #27a9e1;
+				text-decoration: none;
 			}
 
 			/*Demo container styling*/
 			.container {
-				padding: 2% 4%;
+				padding: 20px;
 				display: block;
+				border: 1px solid black;
+			}
+			@media screen and (min-width: 480px) {
+				.container {
+					padding-left: 40px;
+					padding-right: 40px;
+				}
+			}
+			@media screen and (min-height: 640px) {
+				.container {
+					padding-top: 40px;
+					padding-bottom: 40px;
+				}
 			}
 
 			/*Background patterns*/
-			/*Directly ripped from http://lea.verou.me/css3patterns/# */
-			.container {
-				background:
-					linear-gradient(63deg, #999 23%, transparent 23%) 7px 0, 
-					linear-gradient(63deg, transparent 74%, #999 78%), 
-					linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%), 
-					#444;
-				background-size: 16px 48px;
-			}
-			.container .container {
-				background: 
-					linear-gradient(135deg, #eceddc 25%, transparent 25%) -50px 0,
-					linear-gradient(225deg, #eceddc 25%, transparent 25%) -50px 0,
-					linear-gradient(315deg, #eceddc 25%, transparent 25%),
-					linear-gradient(45deg, #eceddc 25%, transparent 25%);	
-				background-size: 100px 100px;
-				background-color: #ec173a;
-			}
+			.container,
 			.container .container .container {
-				background:
-					linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
-					linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
-					linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
-				background-color:#e1ebbd;
-				background-size: 128px 128px;
+				background-color: #92baac;
+				background-image: repeating-linear-gradient(
+					45deg,
+					transparent,
+					transparent 20px,
+					#e1ebbd 20px,
+					#e1ebbd 40px
+				);
 			}
-			.container .container .container .container {
-				background:
-					linear-gradient(324deg, #232927 4%,   transparent 4%) -70px 43px,
-					linear-gradient( 36deg, #232927 4%,   transparent 4%) 30px 43px,
-					linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 30px 43px,
-					linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -70px 43px,
-					linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -70px 23px,
-					linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 30px 23px,
 
-					linear-gradient(324deg, #232927 4%,   transparent 4%) -20px 93px,
-					linear-gradient( 36deg, #232927 4%,   transparent 4%) 80px 93px,
-					linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 80px 93px,
-					linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -20px 93px,
-					linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -20px 73px,
-					linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 80px 73px;
-				background-color: #232927;
-				background-size: 100px 100px;
+			.container .container {
+				background-color: #ec173a;
+				background-image: repeating-linear-gradient(
+					-45deg,
+					transparent,
+					transparent 40px,
+					#eceddc 40px,
+					#eceddc 80px
+				);
+			}
+
+			.container .container .container .container {
+				background-color: #17d4ec;
+				background-image: repeating-linear-gradient(
+					-45deg,
+					transparent,
+					transparent 40px,
+					#dceaed 40px,
+					#dceaed 80px
+				);
 			}
 
 			/*Container heights*/
@@ -74,19 +96,74 @@
 				overflow-y: auto;
 			}
 			.height-1 {
-				height: 40vh;
+				height: 200px;
 			}
 
 			.height-2 {
-				height: 50vh;
+				height: 300px;
 			}
 
 			.height-3 {
-				height: 60vh;
+				height: 400px;
 			}
 
 			.height-4 {
-				height: 70vh;
+				height: 800px;
+			}
+
+			/*Demo form*/
+			.dummyform ul {
+			}
+			.dummyform ul {
+				padding-left: 0;
+				margin-top: 0;
+				margin-bottom: 0;
+				list-style: none;
+
+				position: absolute;
+				width: 20em;
+				max-width: 100%;
+				max-height: 8em;
+				overflow: auto;
+
+				background-color: #fff;
+				border: 1px solid #ccc;
+				border-radius: 3px;
+				box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+			}
+			.dummyform ul a {
+				display: block;
+				padding: 0.5em 0.7em 0.4em 0.7em;
+				border-bottom: 1px solid #eee;
+			}
+			.dummyform ul a:focus,
+			.dummyform ul a:hover {
+				background-color: #f6f6f6;
+			}
+			.dummyform ul li:last-of-type a {
+				border-bottom-width: 0;
+			}
+
+			/*Code*/
+			pre {
+			}
+
+			code {
+				display: inline-block;
+				color: #555;
+				background-color: #f6f6f6;
+				border-radius: 3px;
+				padding: 0.1em 0.2em 0.2em 0.4em;
+			}
+
+			code strong {
+				color: #222;
+			}
+
+			pre code {
+				display: block;
+				padding: 1em;
+				overflow: auto;
 			}
 
 		</style>
@@ -96,13 +173,77 @@
 	<body>
 		<div class="body">
 
-			<h1><em>scroll-scope.js</em> demo</h1>
+			<h1><em>scroll-scope.js</em></h1>
+
+			<p>Small JS plugin to keep parent elements still when scrolling an element past their boundaries</p>
+
+
+
+			<h2>Usage</h2>
+
+			<p>Include and initialize plugin:</p>
+
+			<pre><code>&lt;div class="my-scrollable-element" <strong>data-scroll="scoped"</strong>&gt;
+
+&lt;script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js">&lt;/script&gt;
+&lt;script type="text/javascript" src="scroll-scope.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	<strong>$(document).scrollScope();</strong>
+&lt;/script&gt;</code></pre>
+
+
+
+			<h3>Options</h3>
+
+			<p>By default, <code>data-scroll="scoped"</code> elements are targeted, but you can choose this upon initialization:</p>
+
+			<pre><code>$(document).scrollScope(<strong>'.results, .some-scrollable-element'</strong>);</code></pre>
+
+			<p>By default, the plugin catches the events <code>DOMMouseScroll mousewheel</code>, but you can choose this upon initialization:</p>
+
+			<pre><code>$(document).scrollScope(null, 'DOMMouseScroll mousewheel <strong>my:event</strong>');</code></pre>
+
+
+
+			<h2>Demos</h2>
+
+
 
 			<h3>Simple demo case</h3>
 
-			<div class="container height-3" data-scroll="scoped">
-				<div class="container height-4"></div>
+			<div class="container height-1" data-scroll="scoped">
+				<div class="container height-2"></div>
 			</div>
+
+
+
+			<h3>Real-life use case</h3>
+
+			<p>The document will stay still even when you scroll the results container to the end.</p>
+
+			<form class="dummyform">
+
+				<p><input type="search" value="search term"><input type="submit"></p>
+
+				<ul data-scroll="scoped">
+					<li><a href="#">Search result 1</a></li>
+					<li><a href="#">Search result 2</a></li>
+					<li><a href="#">Search result 3</a></li>
+					<li><a href="#">Search result 4</a></li>
+					<li><a href="#">Search result 5</a></li>
+					<li><a href="#">Search result 6</a></li>
+				</ul>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+			</form>
+
 
 
 			<h3>Nested containers</h3>
@@ -118,13 +259,18 @@
 			</div>
 
 
+			<h2>Credits</h2>
+
+			<p>Plugin by <a href="http://eiskis.net/">Jerry Jäppinen</a>, maintained at <a href="https://github.com/Eiskis/scroll-scope">GitHub</a>.</p>
+
+			<p></p>
 
 		</div>
+
 		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript" src="scroll-scope.js"></script>
+		<script type="text/javascript" src="plugin.js"></script>
 		<script type="text/javascript">
-			// scrollScope.attach(document.body);
-			scrollScope.attach();
+			$(document).scrollScope();
 		</script>
 	</body>
 </html>
