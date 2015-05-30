@@ -25,7 +25,9 @@ gulp.task('build', function () {
 	var files = gulp.src(config.source);
 	return files
 		.pipe(plugins.plumber())
-		.pipe(plugins.uglify())
+		.pipe(plugins.uglify({
+			preserveComments: 'some'
+		}))
 		.pipe(plugins.rename({suffix: '.min'}))
 		.pipe(gulp.dest('./'));
 });

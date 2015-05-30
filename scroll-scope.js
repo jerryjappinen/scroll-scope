@@ -1,8 +1,6 @@
-// scroll-scope.js 0.1.0
-// Jerry Jäppinen
-// http://eiskis.net/
-// Released under MIT
-// https://github.com/Eiskis/scroll-scope
+/*! scroll-scope.js 0.1.0, MIT
+ https://github.com/Eiskis/scroll-scope
+*/
 ;(function ($) {
 
 	$.fn.scrollScope = function (targetSelector, targetEvents) {
