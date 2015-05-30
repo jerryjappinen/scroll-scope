@@ -52,6 +52,12 @@ require_once 'Parsedown.php';
 				padding: 2% 6% 8% 6%;
 			}
 
+			h1,
+			h2,
+			h3 {
+				line-height: 1.2;
+			}
+
 			h2 {
 				margin-top: 6%;
 				padding-top: 6%;
@@ -173,6 +179,7 @@ require_once 'Parsedown.php';
 
 			/*Demo form*/
 			.dummyform {
+				position: relative;
 				border: 1px solid #ddd;
 				border-radius: 3px;
 				padding: 0.5em 1.5em;
