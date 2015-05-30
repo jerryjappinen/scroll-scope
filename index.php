@@ -67,6 +67,33 @@ require_once 'Parsedown.php';
 				text-decoration: none;
 			}
 
+			/*Layout*/
+			.half {
+				float: left;
+				clear: none;
+				width: 48%;
+			}
+			.half + .half {
+				margin-left: 4%;
+			}
+			.clear {
+				clear: both;
+			}
+			@media screen and (min-width: 46em) {
+				pre,
+				.pull {
+					margin-left: -2em;
+					margin-right: -2em;
+				}
+			}
+			@media screen and (min-width: 54em) {
+				pre,
+				.pull {
+					margin-left: -6em;
+					margin-right: -6em;
+				}
+			}
+
 			/*Demo container styling*/
 			.container {
 				padding: 20px;
@@ -145,6 +172,11 @@ require_once 'Parsedown.php';
 			}
 
 			/*Demo form*/
+			.dummyform {
+				border: 1px solid #ddd;
+				border-radius: 3px;
+				padding: 0.5em 1.5em;
+			}
 			.dummyform ul {
 				padding-left: 0;
 				margin-top: 0;
@@ -158,7 +190,7 @@ require_once 'Parsedown.php';
 				overflow: auto;
 
 				background-color: #fff;
-				border: 1px solid #ccc;
+				border: 1px solid #ddd;
 				border-radius: 3px;
 				box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 			}
@@ -199,17 +231,7 @@ require_once 'Parsedown.php';
 			pre code {
 				border-radius: 0;
 			}
-			@media screen and (min-width: 46em) {
-				pre {
-					margin-left: -2em;
-					margin-right: -2em;
-				}
-			}
 			@media screen and (min-width: 54em) {
-				pre {
-					margin-left: -6em;
-					margin-right: -6em;
-				}
 				.hljs,
 				pre code {
 					padding: 1.5em 2em;
@@ -232,12 +254,30 @@ require_once 'Parsedown.php';
 
 			<h2>Demos</h2>
 
+			<p>Commonly in scroll interaction, the user hovers their mouse cursor over a scrollable element and uses the trackpad or a mouse wheel to scroll the element up or down. When an element reaches its boundary, its parent element continues to be scrolled.</p>
 
+			<p>Usually the parent is the document, meaning that the user will continue moving down the page when attempting to scroll an individual container on the page, which is quite annoying. Compare yourself:</p>
 
-			<h3>Simple demo case</h3>
+			<div class="pull">
+				<div class="half">
 
-			<div class="container height-1" data-scroll="scope">
-				<div class="container height-2"></div>
+					<p>No scroll-scope</p>
+
+					<div class="container height-1">
+						<div class="container height-2"></div>
+					</div>
+
+				</div>
+				<div class="half">
+
+					<p>With <code>data-scroll="scope"</code></p>
+
+					<div class="container height-1" data-scroll="scope">
+						<div class="container height-2"></div>
+					</div>
+
+				</div>
+				<div class="clear"></div>
 			</div>
 
 
@@ -246,17 +286,17 @@ require_once 'Parsedown.php';
 
 			<p>The document will stay still even when you scroll the results container to the end.</p>
 
-			<form class="dummyform">
+			<form class="dummyform pull">
 
 				<p><input type="search" value="search term"><input type="submit"></p>
 
 				<ul data-scroll="scope">
-					<li><a href="#">Search result 1</a></li>
-					<li><a href="#">Search result 2</a></li>
-					<li><a href="#">Search result 3</a></li>
-					<li><a href="#">Search result 4</a></li>
-					<li><a href="#">Search result 5</a></li>
-					<li><a href="#">Search result 6</a></li>
+					<li><a href=".">Search result 1</a></li>
+					<li><a href=".">Search result 2</a></li>
+					<li><a href=".">Search result 3</a></li>
+					<li><a href=".">Search result 4</a></li>
+					<li><a href=".">Search result 5</a></li>
+					<li><a href=".">Search result 6</a></li>
 				</ul>
 
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
@@ -316,10 +356,12 @@ pre code {
 
 			<h3>Nested containers</h3>
 
-			<div class="container height-1" data-scroll="scope">
-				<div class="container">
-					<div class="container height-3" data-scroll="scope">
-						<div class="container height-4"></div>
+			<div class="pull">
+				<div class="container height-1" data-scroll="scope">
+					<div class="container">
+						<div class="container height-3" data-scroll="scope">
+							<div class="container height-4"></div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -331,8 +373,18 @@ pre code {
 		<script type="text/javascript" src="scroll-scope.min.js"></script>
 
 		<script type="text/javascript">
-			hljs.initHighlightingOnLoad();
+
+			// scroll-scope.js init
 			$(document).scrollScope();
+
+			// Syntax highlighting
+			hljs.initHighlightingOnLoad();
+
+			// Dummy form
+			$('.dummyform').on('click', 'a', function (e) {
+				e.preventDefault();
+			});
+
 		</script>
 
 	</body>
