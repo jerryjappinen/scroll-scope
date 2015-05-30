@@ -7,7 +7,6 @@
 		// We bind the on handler to this element, but
 		// it's not the one that is being scrolled
 		var mainContainer = this;
-		console.log(mainContainer);
 
 		// Some options
 		var events = targetEvents || 'DOMMouseScroll mousewheel';
