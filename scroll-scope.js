@@ -1,7 +1,9 @@
 ;(function () {
 
-	var ScrollScoper = function (scope, treatChildren, targetSelector, targetEvents) {
+	var scrollScope = function (scope, treatChildren, targetSelector, targetEvents) {
 		var self = this;
+
+
 
 		// Options
 		self.scope = !scope
@@ -70,8 +72,8 @@
 
 
 	// Factory
-	ScrollScoper.attach = function (container, options) {
-		return new ScrollScoper(container, options);
+	scrollScope.attach = function (container, options) {
+		return new scrollScope(container, options);
 	};
 
 
@@ -79,13 +81,13 @@
 	// Boilerplate
 	if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
 		define(function() {
-			return ScrollScoper;
+			return scrollScope;
 		});
 	} else if (typeof module !== 'undefined' && module.exports) {
-		module.exports = ScrollScoper.attach;
-		module.exports.ScrollScoper = ScrollScoper;
+		module.exports = scrollScope.attach;
+		module.exports.scrollScope = scrollScope;
 	} else {
-		window.ScrollScoper = ScrollScoper;
+		window.scrollScope = scrollScope;
 	}
 
 }());
