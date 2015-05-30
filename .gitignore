@@ -3,3 +3,7 @@
 .idea
 .project
 *.log
+
+node_modules/
+vendor/
+bower_components/
