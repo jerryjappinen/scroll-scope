@@ -290,7 +290,7 @@ require_once 'Parsedown.php';
 				border-radius: 3px;
 				padding: 1.5em 2em;
 			}
-			@media screen and (min-width: 35em) {
+			@media screen and (min-width: 40em) {
 				.modal-content {
 					left: 20%;
 					width: 60%;
