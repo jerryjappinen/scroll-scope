@@ -11,7 +11,7 @@
 
 		// Some options
 		var events = targetEvents || 'DOMMouseScroll mousewheel';
-		var selector = targetSelector || '[data-scroll="scoped"]';
+		var selector = targetSelector || '[data-scroll="scope"]';
 
 
 

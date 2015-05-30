@@ -2,7 +2,30 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+
 		<title>scroll-scope.js demo</title>
+		<link rel="icon" href="{{ paths.theme }}{{ iconurl }}" type="image/png">
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="msapplication-tap-highlight" content="no">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<style type="text/css">
+			@-ms-viewport { width: device-width; }
+			@-o-viewport { width: device-width; }
+			@viewport { width: device-width; }
+			body {
+				-webkit-tap-highlight-color: transparent;
+				-webkit-text-size-adjust: none;
+				-moz-text-size-adjust: none;
+				-ms-text-size-adjust: none;
+			}
+		</style>
+
 		<style type="text/css">
 
 			html {
@@ -183,7 +206,7 @@
 
 			<p>Include and initialize plugin:</p>
 
-			<pre><code>&lt;div class="my-scrollable-element" <strong>data-scroll="scoped"</strong>&gt;
+			<pre><code>&lt;div class="my-scrollable-element" <strong>data-scroll="scope"</strong>&gt;
 
 &lt;script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js">&lt;/script&gt;
 &lt;script type="text/javascript" src="scroll-scope.js"&gt;&lt;/script&gt;
@@ -195,7 +218,7 @@
 
 			<h3>Options</h3>
 
-			<p>By default, <code>data-scroll="scoped"</code> elements are targeted, but you can choose this upon initialization:</p>
+			<p>By default, <code>data-scroll="scope"</code> elements are targeted, but you can choose this upon initialization:</p>
 
 			<pre><code>$(document).scrollScope(<strong>'.results, .some-scrollable-element'</strong>);</code></pre>
 
@@ -211,7 +234,7 @@
 
 			<h3>Simple demo case</h3>
 
-			<div class="container height-1" data-scroll="scoped">
+			<div class="container height-1" data-scroll="scope">
 				<div class="container height-2"></div>
 			</div>
 
@@ -225,7 +248,7 @@
 
 				<p><input type="search" value="search term"><input type="submit"></p>
 
-				<ul data-scroll="scoped">
+				<ul data-scroll="scope">
 					<li><a href="#">Search result 1</a></li>
 					<li><a href="#">Search result 2</a></li>
 					<li><a href="#">Search result 3</a></li>
@@ -250,9 +273,9 @@
 
 			<div></div>
 
-			<div class="container height-1" data-scroll="scoped">
+			<div class="container height-1" data-scroll="scope">
 				<div class="container">
-					<div class="container height-3" data-scroll="scoped">
+					<div class="container height-3" data-scroll="scope">
 						<div class="container height-4"></div>
 					</div>
 				</div>

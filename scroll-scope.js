@@ -13,7 +13,7 @@
 							: jQuery(scope);
 
 		self.targetEvents = targetEvents || 'DOMMouseScroll mousewheel';
-		self.targetSelector = targetSelector || '[data-scroll="scoped"]';
+		self.targetSelector = targetSelector || '[data-scroll="scope"]';
 
 
 
@@ -95,18 +95,3 @@
 	}
 
 }());
-
-
-(function ($) {
-
-	$.fn.scrollScope = function (options) {
-
-		var settings = $.extend({
-			color: "#556b2f",
-			backgroundColor: "white"
-		}, options);
-
-		return this.on(self.targetEvents, self.targetSelector, self.onElementScroll);
-	};
-
-}(jQuery));
