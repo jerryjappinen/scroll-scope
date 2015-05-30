@@ -179,10 +179,12 @@ require_once 'Parsedown.php';
 
 			/*Demo form*/
 			.dummyform {
-				position: relative;
 				border: 1px solid #ddd;
 				border-radius: 3px;
 				padding: 0.5em 1.5em;
+			}
+			.dummyform-content {
+				position: relative;
 			}
 			.dummyform ul {
 				padding-left: 0;
@@ -191,6 +193,7 @@ require_once 'Parsedown.php';
 				list-style: none;
 
 				position: absolute;
+				left: 0;
 				width: 20em;
 				max-width: 100%;
 				max-height: 8em;
@@ -295,6 +298,7 @@ require_once 'Parsedown.php';
 			<p>The document will stay still even when you scroll the results container to the end.</p>
 
 			<form class="dummyform pull">
+				<div class="dummyform-content">
 
 				<p><input type="search" value="search term"><input type="submit"></p>
 
@@ -315,6 +319,7 @@ require_once 'Parsedown.php';
 
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
+				</div>
 			</form>
 
 
