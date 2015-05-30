@@ -40,13 +40,13 @@ require_once 'Parsedown.php';
 
 			html {
 				color: #333;
-				font-family: sans-serif;
+				font-family: "Helvetica Neue", "Helvetica", "Roboto", "Segoe UI", "Open Sans", "Arial", sans-serif;
 				line-height: 1.4;
 				-webkit-font-smoothing: antialiased;
 			}
 
 			.body {
-				max-width: 50em;
+				max-width: 40em;
 				margin-left: auto;
 				margin-right: auto;
 				padding: 2% 6% 8% 6%;
@@ -177,22 +177,43 @@ require_once 'Parsedown.php';
 
 			/*Code*/
 			pre {
+				overflow: auto;
+				max-height: 16em;
+				border-radius: 3px;
 			}
-
 			.hljs,
 			code {
 				display: inline-block;
 				color: #555;
 				background-color: #f6f6f6;
 				border-radius: 3px;
-				padding: 0.1em 0.2em 0.2em 0.4em;
+				padding-left: 0.3em;
+				padding-right: 0.3em;
 			}
-
 			.hljs,
 			pre code {
 				display: block;
 				padding: 1em;
 				overflow: auto;
+			}
+			pre code {
+				border-radius: 0;
+			}
+			@media screen and (min-width: 46em) {
+				pre {
+					margin-left: -2em;
+					margin-right: -2em;
+				}
+			}
+			@media screen and (min-width: 54em) {
+				pre {
+					margin-left: -6em;
+					margin-right: -6em;
+				}
+				.hljs,
+				pre code {
+					padding: 1.5em 2em;
+				}
 			}
 
 		</style>
@@ -221,7 +242,7 @@ require_once 'Parsedown.php';
 
 
 
-			<h3>Real-life use case</h3>
+			<h3>Real-life use case: search suggestions</h3>
 
 			<p>The document will stay still even when you scroll the results container to the end.</p>
 
@@ -250,9 +271,50 @@ require_once 'Parsedown.php';
 
 
 
-			<h3>Nested containers</h3>
+			<h3>Real-life use case: code block</h3>
 
-			<div></div>
+			<pre data-scroll="scope"><code>/*A page with lots of code blocks could set a max-height for them*/
+pre {
+	overflow: auto;
+	max-height: 16em;
+}
+
+/*Lots of code*/
+.hljs,
+code {
+	display: inline-block;
+	color: #555;
+	background-color: #f6f6f6;
+	border-radius: 3px;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+}
+.hljs,
+pre code {
+	display: block;
+	padding: 1em;
+	overflow: auto;
+}
+@media screen and (min-width: 46em) {
+	pre {
+		margin-left: -2em;
+		margin-right: -2em;
+	}
+}
+@media screen and (min-width: 54em) {
+	pre {
+		margin-left: -6em;
+		margin-right: -6em;
+	}
+	.hljs,
+	pre code {
+		padding: 1.5em 2em;
+	}
+}</code></pre>
+
+
+
+			<h3>Nested containers</h3>
 
 			<div class="container height-1" data-scroll="scope">
 				<div class="container">

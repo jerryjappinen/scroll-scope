@@ -1,5 +1,5 @@
 
-# *scroll-scope.js 0.1.0*
+# scroll-scope.js 0.1.0
 
 Small JS plugin to keep parent elements still when scrolling an element past their boundaries. Simple fix to a problem that shouldn't exist.
 
@@ -33,7 +33,7 @@ Include and initialize plugin:
 </script>
 ```
 
-The plugin attaches itself on the document (or any parent container you choose), so you don't need to bind it for any new scrollable elements you might load via AJAX or otherwise insert into the DOM after initialization.
+The plugin attaches itself to the document object (or any parent container you choose), so you don't need to bind it for any new scrollable elements you might load via AJAX or otherwise insert into the DOM after initialization.
 
 
 
