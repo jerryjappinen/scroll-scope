@@ -7,7 +7,9 @@ Small JS plugin to keep parent elements still when scrolling an element past the
 
 ## Get it
 
-- Download: 
+- Download minified [scroll-scope.min.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope-min.js) for production
+- Download [scroll-scope.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.js) for development
+- Install with `bower install scroll-scope`
 
 
 
