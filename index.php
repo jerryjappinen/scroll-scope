@@ -1,3 +1,11 @@
+<?php
+error_reporting(0);
+ini_set('display_errors', '0');
+ini_set('error_log', 'errors.log');
+mb_internal_encoding('UTF-8');
+date_default_timezone_set('UTC');
+require_once 'Parsedown.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -25,6 +33,8 @@
 				-ms-text-size-adjust: none;
 			}
 		</style>
+
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github-gist.min.css">
 
 		<style type="text/css">
 
@@ -136,8 +146,6 @@
 
 			/*Demo form*/
 			.dummyform ul {
-			}
-			.dummyform ul {
 				padding-left: 0;
 				margin-top: 0;
 				margin-bottom: 0;
@@ -171,6 +179,7 @@
 			pre {
 			}
 
+			.hljs,
 			code {
 				display: inline-block;
 				color: #555;
@@ -179,10 +188,7 @@
 				padding: 0.1em 0.2em 0.2em 0.4em;
 			}
 
-			code strong {
-				color: #222;
-			}
-
+			.hljs,
 			pre code {
 				display: block;
 				padding: 1em;
@@ -196,39 +202,10 @@
 	<body>
 		<div class="body">
 
-			<h1><em>scroll-scope.js</em></h1>
-
-			<p>Small JS plugin to keep parent elements still when scrolling an element past their boundaries. Simple fix to a problem that shouldn't exist.</p>
-
-
-
-			<h2>Usage</h2>
-
-			<p>Add the `data-scroll="scope"` attribute to any scrollable element on the page.</p>
-
-			<pre><code>&lt;div class="my-scrollable-element" <strong>data-scroll="scope"</strong>&gt;</code></pre>
-
-			<p>Include and initialize plugin:</p>
-
-			<pre><code>&lt;script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js">&lt;/script&gt;
-&lt;script type="text/javascript" src="scroll-scope.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript"&gt;
-	<strong>$(document).scrollScope();</strong>
-&lt;/script&gt;</code></pre>
-
-			<p>The plugin attaches itself on the document (or any parent container you choose), so you don't need to bind it for any new scrollable elements you might load via AJAX or otherwise insert into the DOM after initialization.</p>
-
-
-
-			<h3>Options</h3>
-
-			<p>By default, <code>data-scroll="scope"</code> elements are targeted, but you can choose this upon initialization:</p>
-
-			<pre><code>$(document).scrollScope(<strong>'.results, .some-scrollable-element'</strong>);</code></pre>
-
-			<p>By default, the plugin catches the events <code>DOMMouseScroll mousewheel</code>, but you can choose this upon initialization:</p>
-
-			<pre><code>$(document).scrollScope(null, 'DOMMouseScroll mousewheel <strong>my:event</strong>');</code></pre>
+			<?php
+				$Parsedown = new Parsedown();
+				echo $Parsedown->text(file_get_contents('README.md'));
+			?>
 
 
 
@@ -285,17 +262,16 @@
 				</div>
 			</div>
 
-
-			<h2>Credits</h2>
-
-			<p>Plugin by <a href="http://eiskis.net/">Jerry Jäppinen</a>, maintained at <a href="https://github.com/Eiskis/scroll-scope">GitHub</a>.</p>
-
 		</div>
 
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript" src="plugin.js"></script>
+		<script type="text/javascript" src="scroll-scope.js"></script>
+
 		<script type="text/javascript">
+			hljs.initHighlightingOnLoad();
 			$(document).scrollScope();
 		</script>
+
 	</body>
 </html>

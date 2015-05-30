@@ -5,6 +5,12 @@ Small JS plugin to keep parent elements still when scrolling an element past the
 
 
 
+## Get it
+
+- Download: 
+
+
+
 ## Usage
 
 Add the `data-scroll="scope"` attribute to any scrollable element on the page.

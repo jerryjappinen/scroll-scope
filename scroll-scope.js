@@ -1,21 +1,21 @@
-;(function () {
+;(function ($) {
 
-	var scrollScope = function (scope, treatChildren, targetSelector, targetEvents) {
-		var self = this;
+	$.fn.scrollScope = function (targetSelector, targetEvents) {
 
+		// Setup
 
+		// We bind the on handler to this element, but
+		// it's not the one that is being scrolled
+		var mainContainer = this;
+		console.log(mainContainer);
 
-		// Options
-		self.scope = !scope
-						? jQuery(window.document.body)
-						: scope instanceof jQuery
-							? scope
-							: jQuery(scope);
-
-		self.targetEvents = targetEvents || 'DOMMouseScroll mousewheel';
-		self.targetSelector = targetSelector || '[data-scroll="scope"]';
+		// Some options
+		var events = targetEvents || 'DOMMouseScroll mousewheel';
+		var selector = targetSelector || '[data-scroll="scope"]';
 
 
+
+		// Magic
 
 		// Cancel an event for good
 		// NOTE: on super fast scroll events this sometimes fails
@@ -27,18 +27,18 @@
 		};
 
 		// Prevents parent element from scrolling when a child element is scrolled to its boundaries
-		self.onElementScroll = function (event) {
-			if (!event.letMeThrough) {
+		self.onScroll = function (event) {
+
+			// Child that is being scrolled hasn't labeled the event as legit
+			if (!event.isLegitScroll) {
 				var element = $(this);
 				var scrollTop = this.scrollTop;
-				var scrollHeight = this.scrollHeight;
-				var height = element.outerHeight();
 				var delta = event.originalEvent.wheelDelta;
 				var goingUp = delta > 0;
 
 				// Scrolling down, but this will take us past the bottom
-				if (!goingUp && -delta > scrollHeight - height - scrollTop) {
-					element.scrollTop(scrollHeight);
+				if (!goingUp && -delta > this.scrollHeight - element.outerHeight() - scrollTop) {
+					element.scrollTop(this.scrollHeight);
 					return self.killScrolling(event);
 
 				// Scrolling up, but this will take us past the top
@@ -47,51 +47,31 @@
 					return self.killScrolling(event);
 				}
 
-				// Mark event for other listeners
-				event.letMeThrough = true;
-				return true;
 			}
+
+			// Event wasn't killed, label it legit listeners on parent levels
+			event.isLegitScroll = true;
+			return true;
 		};
 
 
 
-		// Unbind
-		self.destroy = function () {
+		// Actions
+
+		// Remove listener from parent
+		var destroy = function () {
 			if (self.scope.length) {
-				self.off(self.targetEvents, self.targetSelector, self.onElementScroll);
+				self.off(events, selector, onScroll);
 			}
 			return self;
 		};
 
-		// Bind to main container
-		self.bind = function () {
-			if (self.scope.length) {
-				self.scope.on(self.targetEvents, self.targetSelector, self.onElementScroll);
-			}
-			return self;
+		// Bind listener to parent
+		var bind = function () {
+			return mainContainer.on(events, selector, onScroll);
 		};
 
+		return bind();
 	};
 
-
-
-	// Factory
-	scrollScope.attach = function (container, options) {
-		return (new scrollScope(container, options)).bind();
-	};
-
-
-
-	// Boilerplate
-	if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
-		define(function() {
-			return scrollScope;
-		});
-	} else if (typeof module !== 'undefined' && module.exports) {
-		module.exports = scrollScope.attach;
-		module.exports.scrollScope = scrollScope;
-	} else {
-		window.scrollScope = scrollScope;
-	}
-
-}());
+}(jQuery));
