@@ -1,5 +1,5 @@
 
-# *scroll-scope.js*
+# *scroll-scope.js 0.1.0*
 
 Small JS plugin to keep parent elements still when scrolling an element past their boundaries. Simple fix to a problem that shouldn't exist.
 
