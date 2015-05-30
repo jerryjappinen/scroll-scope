@@ -14,7 +14,7 @@
 &lt;script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js">&lt;/script&gt;
 &lt;script type="text/javascript" src="scroll-scope.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
-<strong>$(document).scrollScope();</strong>
+	<strong>$(document).scrollScope();</strong>
 &lt;/script&gt;</code></pre>
 
 
@@ -28,3 +28,9 @@
 <p>By default, the plugin catches the events <code>DOMMouseScroll mousewheel</code>, but you can choose this upon initialization:</p>
 
 <pre><code>$(document).scrollScope(null, 'DOMMouseScroll mousewheel <strong>my:event</strong>');</code></pre>
+
+
+
+<h2>Credits</h2>
+
+<p>Plugin by <a href="http://eiskis.net/">Jerry Jäppinen</a> (under<a href="https://github.com/Eiskis/scroll-scope/blob/master/LICENSE">MIT</a>).</p>
