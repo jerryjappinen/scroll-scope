@@ -282,13 +282,19 @@ require_once 'Parsedown.php';
 				overflow: auto;
 				box-sizing: border-box;
 				top: 10%;
-				left: 20%;
-				width: 60%;
+				left: 10%;
+				width: 80%;
 				height: 30em;
 				max-height: 80%;
 				background-color: #fff;
 				border-radius: 3px;
 				padding: 1.5em 2em;
+			}
+			@media screen and (min-width: 35em) {
+				.modal-content {
+					left: 20%;
+					width: 60%;
+				}
 			}
 
 		</style>
