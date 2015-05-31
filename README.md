@@ -69,6 +69,12 @@ $(document).scrollScope({
 
 
 
+### Known issues
+
+On mobile Safari, when a scrollable element is at its boundary and the user grabs it to scroll it again, the scroll event still bleeds through.
+
+
+
 ## Credits
 
 Plugin by [Jerry Jäppinen](http://eiskis.net/) (under [MIT](https://github.com/Eiskis/scroll-scope/blob/master/LICENSE)).

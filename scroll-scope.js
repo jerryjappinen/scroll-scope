@@ -15,24 +15,30 @@
 		var settings = $.extend({
 			elements: '[data-scroll-scope]',
 			forcedElements: '[data-scroll-scope="force"]',
-			events: 'DOMMouseScroll mousewheel scroll touchmove'
+			events: 'DOMMouseScroll mousewheel scroll touchstart touchmove'
 		}, options);
-
-		var selector = settings.elements + ', ' + settings.forcedElements;
 
 
 
 		// Magic
 
 		// Cancel an event for good
-		// Preventing touchmove disables click events on mobile Safari, so we require user to force
 		var killScrolling = function (event, force) {
-			if (force || event.type !== 'touchmove') {
+
+			// Preventing touchmove disables click events on mobile Safari, so we require user to force
+			if (
+				force ||
+				(
+					event.type !== 'touchmove' &&
+					event.type !== 'touchstart'
+				)
+			) {
 				event.preventDefault();
 				event.stopPropagation();
 				event.returnValue = false;
 				return false;
 			}
+
 		};
 
 		// Prevents parent element from scrolling when a child element is scrolled to its boundaries
@@ -49,6 +55,8 @@
 			var yPos = this.scrollTop;
 			var scrollHeight = this.scrollHeight;
 			var apparentHeight = element.outerHeight();
+
+			console.log(event.type, event, element);
 
 			// Let targeted elements scroll parent when they're not scrollable at all
 			if (scrollHeight <= apparentHeight) {
@@ -88,6 +96,7 @@
 
 
 		// Actions
+		var selector = settings.elements + ', ' + settings.forcedElements;
 
 		// Remove listener from parent
 		var destroy = function () {

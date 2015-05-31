@@ -18,13 +18,6 @@ body {
 	padding: 0;
 }
 
-.body-content {
-	max-width: 40em;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 2% 6% 8% 6%;
-}
-
 form,
 div,
 a,
@@ -100,7 +93,6 @@ h3 {
 }
 
 a {
-	display: inline-block;
 	color: #11b7d4;
 	text-decoration: none;
 	border-bottom: 1px dashed rgba(57, 159, 177, 0.3);
@@ -122,6 +114,7 @@ a {
 	}
 
 .button {
+	display: inline-block;
 	border-width: 0;
 	padding: 0.8em 1.4em;
 	background-color: #80d4a9;
@@ -164,6 +157,12 @@ body {
 .body {
 	background-color: #fff;
 }
+.body-content {
+	max-width: 40em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 2% 6% 3em 6%;
+}
 .zigzag {
 	display: block;
 	clear: both;
@@ -180,7 +179,7 @@ body {
 }
 	.zigzag.reverse {
 		border-top-width: 0;
-		border-bottom-width: 1em;
+		border-bottom-width: 4em;
 		background:
 			linear-gradient(315deg, #80d4a9 25%, transparent 25%),
 			linear-gradient(45deg, #80d4a9 25%, transparent 25%);
@@ -194,6 +193,9 @@ body {
 .center {
 	text-align: center;
 }
+.clear {
+	clear: both;
+}
 @media screen and (max-width: 30em) {
 	.extra {
 		display: none;
@@ -204,12 +206,14 @@ body {
 	clear: none;
 	width: 48%;
 }
-.half + .half {
-	margin-left: 4%;
-}
-.clear {
-	clear: both;
-}
+	.half + .half {
+		margin-left: 4%;
+	}
+	@media screen and (max-width: 30em) {
+		.half code {
+			font-size: 0.9em;
+		}
+	}
 @media screen and (min-width: 46em) {
 	pre,
 	.pull {
@@ -295,12 +299,13 @@ pre code {
 	.readme > h2:first-of-type + p + ul li a {
 		display: block;
 		border-width: 0;
-		padding: 0.4em;
+		padding: 0.4em 0;
 		background-color: #80d4a9;
 		color: #fff;
 		font-weight: bold;
 		border-radius: 3px;
 		text-align: center;
+		font-size: 0.85em;
 
 		-webkit-transition-duration: 750ms;
 		-moz-transition-duration: 750ms;
@@ -549,6 +554,7 @@ pre code {
 	line-height: 1;
 }
 .footer a {
+	display: inline-block;
 	border-bottom-width: 0;
 }
 .footer img {
