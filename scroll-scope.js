@@ -25,7 +25,7 @@
 		// Magic
 
 		// Cancel an event for good
-		// Preventing touchmove disables click events on mobile Safari, rquiring user to force
+		// Preventing touchmove disables click events on mobile Safari, so we require user to force
 		var killScrolling = function (event, force) {
 			if (force || event.type !== 'touchmove') {
 				event.preventDefault();
