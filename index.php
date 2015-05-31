@@ -401,10 +401,6 @@ require_once 'Parsedown.php';
 				<ul data-scroll="scope">
 					<li><a href=".">Search result 1</a></li>
 					<li><a href=".">Search result 2</a></li>
-					<li><a href=".">Search result 3</a></li>
-					<li><a href=".">Search result 4</a></li>
-					<li><a href=".">Search result 5</a></li>
-					<li><a href=".">Search result 6</a></li>
 				</ul>
 
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>

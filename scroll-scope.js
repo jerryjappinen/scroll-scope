@@ -22,8 +22,14 @@
 		// Cancel an event for good
 		// NOTE: on super fast scroll events this sometimes fails
 		self.killScrolling = function (event) {
+
+			// Preventing touchmove disables click events on mobile Safari
+			if (event.type !== 'touchmove') {
+				event.preventDefault();
+			}
+
+			// Kill kill kill
 			event.stopPropagation();
-			event.preventDefault();
 			event.returnValue = false;
 			return false;
 		};
@@ -43,6 +49,7 @@
 			var apparentHeight = element.outerHeight();
 
 			// Workaround for mobile
+			// NOTE: this blocks scrolling if the elemenet has data-scroll attribute, even if it's not scrollable
 			if (event.type === 'touchmove' && scrollHeight <= apparentHeight) {
 				return self.killScrolling(event);
 			}
