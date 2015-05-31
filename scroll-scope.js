@@ -77,11 +77,11 @@
 
 				// When we're on top, move down one pixel
 				if (this.scrollTop <= 0) {
-					element.scrollTop(10);
+					element.scrollTop(1);
 
 				// When we're at the bottom, move up one pixel
 				} else if (scrollingLeft <= 0) {
-					element.scrollTop(scrollHeight - apparentHeight - 10);
+					element.scrollTop(scrollHeight - apparentHeight - 1);
 				}
 			}
 
