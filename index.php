@@ -318,7 +318,7 @@ $(document).on('click', '[data-action="toggle-modal"]', function (event) {
 
 			// Modal dialog
 			$(document).on('click', '[data-action="toggle-modal"]', function (event) {
-				if (!$(this).is('.modal-overlay-close') || if (!$(this).is('.modal-overlay-close') || this === event.target) {) {
+				if (!$(this).is('.modal-overlay-close') || this === event.target) {
 					event.preventDefault();
 					$('.modal').toggleClass('closed');
 				}

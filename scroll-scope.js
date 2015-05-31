@@ -25,17 +25,14 @@
 		// Magic
 
 		// Cancel an event for good
-		// NOTE: on super fast scroll events this sometimes fails
+		// Preventing touchmove disables click events on mobile Safari, rquiring user to force
 		var killScrolling = function (event, force) {
-
-			// Preventing touchmove disables click events on mobile Safari, rquiring user to force
 			if (force || event.type !== 'touchmove') {
 				event.preventDefault();
 				event.stopPropagation();
 				event.returnValue = false;
 				return false;
 			}
-
 		};
 
 		// Prevents parent element from scrolling when a child element is scrolled to its boundaries
@@ -62,7 +59,9 @@
 			}
 
 			// Normalize fetching delta
-			var delta = (event.originalEvent.wheelDelta);
+			var delta = event.originalEvent.wheelDelta;
+
+			// Firefox doesn't return delta, but we don't need it since Firefox works out of the box
 			// if (typeof delta === 'undefined') {
 			// 	delta = event.originalEvent.detail;
 			// }
