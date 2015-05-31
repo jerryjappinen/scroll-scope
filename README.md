@@ -27,6 +27,7 @@ Add the `data-scroll-scope` attribute to any scrollable element on the page:
 
 ```html
 <div class="my-scrollable-element" data-scroll-scope>
+<div class="another-scrollable-element" data-scroll-scope="force">
 ```
 
 Include and initialize:

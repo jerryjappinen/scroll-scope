@@ -39,9 +39,15 @@ h3 {
 }
 
 h2 {
-	margin-top: 6%;
-	padding-top: 6%;
+	margin-top: 12%;
+	padding-top: 12%;
 	border-top-width: 1px;
+}
+@media screen and (min-width: 40em) {
+	h2 {
+		margin-top: 6%;
+		padding-top: 6%;
+	}
 }
 
 h3 {
@@ -322,7 +328,7 @@ pre code {
 		width: 60%;
 	}
 }
-@media screen and (min-width: 100em) {
+@media screen and (min-width: 10em) {
 	.modal-content {
 		left: 30%;
 		width: 40%;

@@ -87,7 +87,7 @@ require_once 'Parsedown.php';
 
 			<h3>Real-life use case: modal dialog</h3>
 
-			<div class="modal closed" data-action="modal" data-scroll-scope="force">
+			<div class="modal closed" data-scroll-scope="force">
 				<div class="modal-content" data-scroll-scope="force">
 
 					<p>Modal dialog implementations tend to scroll the document. In this trivial custom dialog, the code that avoids this problem looks like this:</p>
