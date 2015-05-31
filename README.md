@@ -11,13 +11,18 @@ This behavior varies a little from browser to browser but it doesn't work well o
 
 ## Get the plugin
 
-Download [scroll-scope.min.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.min.js) for production or [scroll-scope.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.js) for development. Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope), demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope).
+Direct download:
+
+- Production: [scroll-scope.min.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.min.js)
+- Development: [scroll-scope.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.js)
 
 Install with Bower:
 
 ```sh
 bower install scroll-scope
 ```
+
+Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope), demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope).
 
 
 
