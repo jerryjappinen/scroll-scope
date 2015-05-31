@@ -1,11 +1,11 @@
 
 # scroll-scope.js 0.1.0
 
-Small JS plugin to keep parent elements still when scrolling an element past their boundaries. Simple fix to a problem that shouldn't exist.
+Small JS plugin to <strong>keep parent element still when scrolling an element to its boundary</strong>.
 
-Commonly in scroll interaction, user hovers a mouse cursor over a scrollable element and uses trackpad or mouse wheel to scroll the element. When an element reaches its boundary, its parent element continues scrolling.
+Commonly in scroll interaction, user hovers a mouse cursor over a scrollable element and uses trackpad or mouse wheel to scroll the element. When an element reaches its boundary, its parent element continues scrolling. Usually this means that the user will continue moving down the page when attempting to interact with an specific container. This is a common issue with dropdown menus and modal dialogs.
 
-Usually this means that the user will continue moving down the page when attempting to interact with an specific container on the page. This is a common issue with dropdown menus and modal dialogs.
+This behavior varies a little from browser to browser but it doesn't work well on any of them. <em>scroll-scope.js</em> is a simple fix to this problem that shouldn't exist.
 
 
 
@@ -26,7 +26,10 @@ bower install scroll-scope
 Add the `data-scroll-scope` attribute to any scrollable element on the page:
 
 ```html
+<!-- Scope scrolling of an element when they overflow -->
 <div class="my-scrollable-element" data-scroll-scope>
+
+<!-- Scope scrolling of an element whether or not it overflows -->
 <div class="another-scrollable-element" data-scroll-scope="force">
 ```
 

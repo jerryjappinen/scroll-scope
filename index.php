@@ -55,7 +55,7 @@ require_once 'Parsedown.php';
 			<div class="pull">
 
 				<div class="half">
-					<p>No scroll-scope;</p>
+					<p>No scroll-scope:</p>
 				</div>
 				<div class="half">
 					<p>With <code>data-scroll-scope:</code></p>
@@ -117,7 +117,7 @@ require_once 'Parsedown.php';
 
 			<p>In this quite trivial custom dialog implementation, we scope the scrolling in both the overall container and the content area to avoid this. We also want to use `force` to disable parent scrolling even when the areas do not overflow.</p>
 
-			<p><strong>Note!</strong> When scroll events are blocked, <strong>mobile Safari also blocks click events for that element</strong>. This is why we must attach the click event handler that closes the modal on overlay click to an element that doesn't use `data-scroll-scope`.</p>
+			<p><strong>Note!</strong> When scroll events are blocked, <strong>mobile Safari also blocks click events for that element</strong>. This only happens when using `force`. To closes the modal on overlay click, we must attach the click event handler to an element that does <strong>not</strong> use `data-scroll-scope`.</p>
 
 			<p>The source looks like this:</p>
 
@@ -141,6 +141,15 @@ require_once 'Parsedown.php';
 	.modal.closed {
 		display: none;
 	}
+.modal-overlay-close {
+	position: fixed;
+	z-index: 15;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
 .modal-content {
 	position: fixed;
 	z-index: 20;
@@ -151,6 +160,7 @@ require_once 'Parsedown.php';
 	width: 90%;
 	height: 30em;
 	max-height: 90%;
+	cursor: default;
 
 	background-color: #fff;
 	padding: 0.5em 1em;
@@ -233,7 +243,8 @@ pre code {
 
 			<div class="pull">
 				<div class="container height-1" data-scroll-scope>
-					<div class="container height-3" data-scroll-scope>
+					<div class="container height-2" data-scroll-scope>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 					</div>
@@ -258,6 +269,16 @@ pre code {
 					</div>
 				</div>
 			</div>
+
+
+
+			<div class="footer">
+				<h2>That's it!</h2>
+				<ul><li><a href="http://eiskis.net/"><span class="extra">More at </span>eiskis.net</a></li><li><a href="http://eiskis.net/"><img src="http://eiskis.net/pages/images/jerry.png" alt="Jerry Jäppinen" title="Jerry Jäppinen"></a></li><li><a href="http://twitter.com/Eiskis">@eiskis<span class="extra"> on Twitter</span></a></li></ul>
+				<p>Thanks for checking this out.</p>
+			</div>
+
+
 
 		</div>
 
