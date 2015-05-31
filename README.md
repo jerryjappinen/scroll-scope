@@ -23,17 +23,20 @@ bower install scroll-scope
 
 ## Usage
 
-Add the `data-scroll="scope"` attribute to any scrollable element on the page.
+Add the `data-scroll-scope` attribute to any scrollable element on the page:
 
 ```html
-<div class="my-scrollable-element" data-scroll="scope">
+<div class="my-scrollable-element" data-scroll-scope>
 ```
 
-Include and initialize plugin:
+Include and initialize:
 
 ```html
+// jQuery comes first, then the plugin
 <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="scroll-scope.min.js"></script>
+
+// Activate the plugin on your page
 <script type="text/javascript">
 	$(document).scrollScope();
 </script>
@@ -45,16 +48,14 @@ The plugin attaches itself to the document object (or any parent container you c
 
 ### Options
 
-By default, `data-scroll="scope"` elements are targeted, but you can choose this upon initialization:
+You can change which elements and events are targeted by setting them upon initialization. Here are the defaults:
 
 ```js
-$(document).scrollScope('.results, .some-scrollable-element');
-```
-
-By default, the plugin catches the events <code>DOMMouseScroll mousewheel</code>, but you can choose this upon initialization:
-
-```js
-$(document).scrollScope(null, 'DOMMouseScroll mousewheel my:event');
+$(document).scrollScope({
+	elements: '[data-scroll-scope]',
+	forcedElements: '[data-scroll-scope="force"]',
+	events: 'DOMMouseScroll mousewheel scroll touchmove'
+});
 ```
 
 

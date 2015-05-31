@@ -1,0 +1,330 @@
+
+* {
+	-webkit-overflow-scrolling: touch;
+}
+
+html {
+	color: #293a3d;
+	font-family: "Lato", "Helvetica Neue", "Helvetica", "Roboto", "Segoe UI", "Open Sans", "Arial", sans-serif;
+	line-height: 1.4;
+	-webkit-font-smoothing: antialiased;
+}
+
+.body {
+	max-width: 40em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 2% 6% 8% 6%;
+}
+
+form,
+div,
+a,
+h1,
+h2,
+h3,
+ul,
+li {
+	border-width: 0;
+	border-color: #d5d8db;
+	border-style: solid;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.2;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+h2 {
+	margin-top: 6%;
+	padding-top: 6%;
+	border-top-width: 1px;
+}
+
+h3 {
+	font-size: 1em;
+	margin-top: 6%;
+}
+
+a {
+	display: inline-block;
+	color: #11b7d4;
+	text-decoration: none;
+	border-bottom: 1px dashed rgba(57, 159, 177, 0.3);
+}
+	a:focus,
+	a:hover {
+		color: #1791a6;
+		border-bottom-color: transparent;
+	}
+
+/*Layout*/
+.half {
+	float: left;
+	clear: none;
+	width: 48%;
+}
+.half + .half {
+	margin-left: 4%;
+}
+.clear {
+	clear: both;
+}
+@media screen and (min-width: 46em) {
+	pre,
+	.pull {
+		margin-left: -2em;
+		margin-right: -2em;
+	}
+	.modal pre {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+@media screen and (min-width: 54em) {
+	pre,
+	.pull {
+		margin-left: -6em;
+		margin-right: -6em;
+	}
+	.modal pre {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+
+
+/*Code*/
+pre {
+	overflow: auto;
+	max-height: 16em;
+	border-radius: 3px;
+	font-size: inherit;
+}
+code {
+	background-color: #f0f1f2;
+	color: #555;
+}
+.hljs,
+code {
+	display: inline-block;
+	border-radius: 3px;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+}
+.hljs,
+pre code {
+	display: block;
+	padding: 1em;
+	overflow: auto;
+}
+pre code {
+	border-radius: 0;
+}
+@media screen and (min-width: 54em) {
+	.hljs,
+	pre code {
+		padding: 1.5em 2em;
+	}
+}
+
+
+
+/*Demo container styling*/
+.container {
+	padding: 20px;
+	display: block;
+	font-weight: bold;
+	border-radius: 3px;
+}
+@media screen and (min-width: 480px) {
+	.container {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+@media screen and (min-height: 640px) {
+	.container {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+
+.container p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.container p + p {
+	margin-top: 2.4em;
+}
+
+/*Background patterns*/
+.container {
+	background-color: #92baac;
+	background-image: repeating-linear-gradient(
+		45deg,
+		transparent,
+		transparent 20px,
+		#b5d9d4 20px,
+		#b5d9d4 40px
+	);
+}
+
+.container .container {
+	background-color: #e0dfd0;
+	background-image: repeating-linear-gradient(
+		-45deg,
+		transparent,
+		transparent 40px,
+		#eceddc 40px,
+		#eceddc 80px
+	);
+}
+
+.container .container .container {
+	background-color: #e078ec;
+	background-image: repeating-linear-gradient(
+		-45deg,
+		transparent,
+		transparent 40px,
+		#dd44b4 40px,
+		#dd44b4 80px
+	);
+}
+
+.container .container .container .container {
+	background-color: #cadfe8;
+	background-image: repeating-linear-gradient(
+		-45deg,
+		transparent,
+		transparent 40px,
+		#d7f1f7 40px,
+		#d7f1f7 80px
+	);
+}
+
+
+
+/*Container heights*/
+.height-1,
+.height-2,
+.height-3,
+.height-4 {
+	overflow-y: auto;
+}
+.height-1 {
+	height: 150px;
+}
+
+.height-2 {
+	height: 200px;
+}
+
+.height-3 {
+	height: 250px;
+}
+
+.height-4 {
+	height: 300px;
+}
+
+
+
+/*Demo form*/
+.dummyform {
+	border-width: 1px;
+	border-radius: 3px;
+	padding: 0.5em 1.5em;
+}
+.dummyform-content {
+	position: relative;
+}
+.dummyform ul {
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	list-style: none;
+
+	position: absolute;
+	left: 0;
+	width: 20em;
+	max-width: 100%;
+	max-height: 8em;
+	overflow: auto;
+
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(40, 43, 46, 0.25);
+}
+.dummyform ul a {
+	display: block;
+	padding: 0.5em 0.7em 0.4em 0.7em;
+	border-bottom: 1px solid #e1e3e5;
+}
+	.dummyform ul a:focus,
+	.dummyform ul a:hover {
+		background-color: rgba(40, 43, 46, 0.03);
+	}
+	.dummyform ul li:last-of-type a {
+		border-bottom-width: 0;
+	}
+
+
+
+/*Modal dialog*/
+.modal {
+	position: fixed;
+	z-index: 10;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+	.modal.closed {
+		display: none;
+	}
+.modal-content {
+	position: fixed;
+	z-index: 20;
+	overflow: auto;
+	box-sizing: border-box;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 30em;
+	max-height: 90%;
+	background-color: #fff;
+	border-radius: 3px;
+	padding: 0.5em 1em;
+}
+@media screen and (min-height: 40em) {
+	.modal-content {
+		top: 10%;
+		max-height: 80%;
+	}
+}
+@media screen and (min-width: 40em) {
+	.modal-content {
+		left: 10%;
+		width: 80%;
+		padding: 1.5em 2em;
+	}
+}
+@media screen and (min-width: 70em) {
+	.modal-content {
+		left: 20%;
+		width: 60%;
+	}
+}
+@media screen and (min-width: 100em) {
+	.modal-content {
+		left: 30%;
+		width: 40%;
+	}
+}

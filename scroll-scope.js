@@ -3,7 +3,7 @@
 */
 ;(function ($) {
 
-	$.fn.scrollScope = function (targetSelector, targetEvents) {
+	$.fn.scrollScope = function (options) {
 
 		// Setup
 
@@ -12,8 +12,13 @@
 		var mainContainer = this;
 
 		// Some options
-		var events = targetEvents || 'DOMMouseScroll mousewheel scroll touchmove';
-		var selector = targetSelector || '[data-scroll="scope"]';
+		var settings = $.extend({
+			elements: '[data-scroll-scope]',
+			forcedElements: '[data-scroll-scope="force"]',
+			events: 'DOMMouseScroll mousewheel scroll touchmove'
+		}, options);
+
+		var selector = settings.elements + ', ' + settings.forcedElements;
 
 
 
@@ -21,10 +26,10 @@
 
 		// Cancel an event for good
 		// NOTE: on super fast scroll events this sometimes fails
-		self.killScrolling = function (event) {
+		var killScrolling = function (event, force) {
 
-			// Preventing touchmove disables click events on mobile Safari
-			if (event.type !== 'touchmove') {
+			// Preventing touchmove disables click events on mobile Safari, so user should use force
+			if (force || event.type !== 'touchmove') {
 				event.preventDefault();
 				event.stopPropagation();
 				event.returnValue = false;
@@ -34,7 +39,7 @@
 		};
 
 		// Prevents parent element from scrolling when a child element is scrolled to its boundaries
-		self.onScroll = function (event) {
+		var onScroll = function (event) {
 
 			// Event wasn't killed, label it legit listeners on parent levels
 			if (event.isLegitScroll) {
@@ -43,14 +48,14 @@
 
 			// Start handling
 			var element = $(this);
+			var force = element.is(settings.forcedElements);
 			var yPos = this.scrollTop;
 			var scrollHeight = this.scrollHeight;
 			var apparentHeight = element.outerHeight();
 
-			// Workaround for mobile
-			// NOTE: this blocks scrolling if the elemenet has data-scroll attribute, even if it's not scrollable
-			if (event.type === 'touchmove' && scrollHeight <= apparentHeight) {
-				return self.killScrolling(event);
+			// Let targeted elements scroll parent when they're not scrollable at all
+			if (!force && scrollHeight <= apparentHeight) {
+				return true;
 			}
 
 			// Normalize fetching delta
@@ -66,12 +71,12 @@
 				// Scrolling down, but this will take us past the bottom
 				if (!goingUp && -delta > (scrollHeight - apparentHeight - yPos)) {
 					element.scrollTop(this.scrollHeight);
-					return self.killScrolling(event);
+					return killScrolling(event, force);
 
 				// Scrolling up, but this will take us past the top
 				} else if (goingUp && delta > yPos) {
 					element.scrollTop(0);
-					return self.killScrolling(event);
+					return killScrolling(event, force);
 				}
 			}
 
@@ -86,15 +91,12 @@
 
 		// Remove listener from parent
 		var destroy = function () {
-			if (self.scope.length) {
-				self.off(events, selector, onScroll);
-			}
-			return self;
+			return mainContainer.off(settings.events, selector, onScroll);
 		};
 
 		// Bind listener to parent
 		var bind = function () {
-			return mainContainer.on(events, selector, onScroll);
+			return mainContainer.on(settings.events, selector, onScroll);
 		};
 
 		return bind();
