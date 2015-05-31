@@ -11,6 +11,13 @@ html {
 	-webkit-font-smoothing: antialiased;
 }
 
+html,
+body {
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 .body {
 	max-width: 40em;
 	margin-left: auto;
@@ -55,6 +62,10 @@ h3 {
 	margin-top: 12%;
 }
 
+h1 {
+	font-size: 1.6em;
+}
+
 h2 {
 	font-size: 1.6em;
 	padding-top: 12%;
@@ -62,11 +73,20 @@ h2 {
 }
 
 h3 {
-	font-size: 1em;
+	font-size: 1.2em;
 }
-@media screen and (max-width: 30em) {
+@media screen and (min-width: 30em) {
 	h1 {
-		font-size: 1.6em;
+		font-size: 3em;
+	}
+	h1,
+	h2 {
+		text-align: center;
+	}
+}
+@media screen and (min-width: 70em) {
+	h1 {
+		font-size: 4em;
 	}
 }
 @media screen and (min-width: 40em) {
@@ -100,6 +120,30 @@ a {
 	text-align: center;
 }
 
+.zigzag {
+	display: block;
+	clear: both;
+	width: 100%;
+	height: 1em;
+	border-top-width: 1em;
+	border-color: #80d4a9;
+
+	background:
+		linear-gradient(135deg, #80d4a9 25%, transparent 25%) 1em 0,
+		linear-gradient(225deg, #80d4a9 25%, transparent 25%) 1em 0;
+	background-size: 2em 2em;
+	background-position: 50% 0;
+}
+	.zigzag.reverse {
+		border-top-width: 0;
+		border-bottom-width: 1em;
+		background:
+			linear-gradient(315deg, #80d4a9 25%, transparent 25%),
+			linear-gradient(45deg, #80d4a9 25%, transparent 25%);
+		background-size: 2em 2em;
+		background-position: 50% -1em;
+	}
+
 /*Layout*/
 @media screen and (max-width: 30em) {
 	.extra {
@@ -123,9 +167,11 @@ a {
 		margin-left: -2em;
 		margin-right: -2em;
 	}
-	.modal pre {
-		margin-left: 0;
-		margin-right: 0;
+	h2 {
+		margin-left: -1.25em;
+		margin-right: -1.25em;
+		padding-left: 1.25em;
+		padding-right: 1.25em;
 	}
 }
 @media screen and (min-width: 54em) {
@@ -134,9 +180,11 @@ a {
 		margin-left: -6em;
 		margin-right: -6em;
 	}
-	.modal pre {
-		margin-left: 0;
-		margin-right: 0;
+	h2 {
+		margin-left: -3.75em;
+		margin-right: -3.75em;
+		padding-left: 3.75em;
+		padding-right: 3.75em;
 	}
 }
 
@@ -219,48 +267,35 @@ pre code {
 }
 
 /*Background patterns*/
-.container {
-	background-color: #c4f1da;
+.container,
+.container .container .container {
+	background-color: #b7e6cf;
 	background-image: repeating-linear-gradient(
 		45deg,
 		transparent,
 		transparent 20px,
-		#b7e6cf 20px,
-		#b7e6cf 40px
+		#c4f1da 20px,
+		#c4f1da 40px
 	);
 }
 
-.container .container {
-	background-color: #e0dfd0;
-	background-image: repeating-linear-gradient(
-		-45deg,
-		transparent,
-		transparent 40px,
-		#eceddc 40px,
-		#eceddc 80px
-	);
-}
-
-.container .container .container {
-	background-color: #e078ec;
-	background-image: repeating-linear-gradient(
-		-45deg,
-		transparent,
-		transparent 40px,
-		#dd44b4 40px,
-		#dd44b4 80px
-	);
-}
-
+.container .container,
 .container .container .container .container {
-	background-color: #cadfe8;
+	color: #fff;
+	background-color: #393d42;
 	background-image: repeating-linear-gradient(
 		-45deg,
 		transparent,
 		transparent 40px,
-		#d7f1f7 40px,
-		#d7f1f7 80px
+		#434950 40px,
+		#434950 80px
 	);
+}
+.container .container .container {
+	background-color: #d8f5e6;
+}
+.container .container .container .container {
+	background-color: #51575e;
 }
 
 
@@ -314,7 +349,7 @@ pre code {
 
 	background-color: #fff;
 	border-radius: 3px;
-	box-shadow: 0 1px 2px rgba(40, 43, 46, 0.25);
+	box-shadow: 0 2px 3px 1px rgba(40, 43, 46, 0.25);
 }
 .dummyform ul a {
 	display: block;

@@ -11,8 +11,9 @@ require_once 'Parsedown.php';
 	<head>
 		<meta charset="utf-8">
 
-		<title>scroll-scope.js demo</title>
-		<!-- <link rel="icon" href="icon.png" type="image/png"> -->
+		<title>scroll-scope.js</title>
+		<link rel="icon" href="icon.png" type="image/png">
+		<meta property="og:image" content="http://eiskis.net/scroll-scope/splash.png">
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -41,6 +42,7 @@ require_once 'Parsedown.php';
 	</head>
 
 	<body>
+		<div class="zigzag"></div>
 		<div class="body">
 
 			<div class="readme">
@@ -255,7 +257,7 @@ pre code {
 
 
 
-			<h3>Unpractical number of nested containers</h3>
+			<h3>Impractical number of nested containers</h3>
 
 			<div class="pull">
 				<div class="container height-1" data-scroll-scope>
@@ -283,6 +285,7 @@ pre code {
 
 
 		</div>
+		<div class="zigzag reverse"></div>
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>

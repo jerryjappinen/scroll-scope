@@ -1,5 +1,5 @@
 
-# *scroll-scope.js* 0.1.0
+# *scroll-scope.js*
 
 Small jQuery plugin to <strong>keep parent element still when scrolling an element to its boundary</strong>.
 
@@ -22,7 +22,7 @@ Install with Bower:
 bower install scroll-scope
 ```
 
-Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope), demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope).
+Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope), demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope). Current version is 0.1.0.
 
 
 
