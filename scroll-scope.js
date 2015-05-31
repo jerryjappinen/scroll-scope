@@ -67,20 +67,21 @@
 			// Normalize fetching delta
 			var delta = event.originalEvent.wheelDelta;
 
-			// Mobile doesn't let us kill scrolling in some situations
+			// Mobile doesn't let us kill scrolling in some situations, but
+			// if we cheat for just 1px the native scoping works with bounce
 			if (
 				force &&
 				typeof delta === 'undefined' &&
 				(event.type === 'touchstart')
 			) {
-				console.log('evaluating');
-				if (this.scrollTop <= 0) {
-					console.log('top');
-					element.scrollTop(1);
 
+				// When we're on top, move down one pixel
+				if (this.scrollTop <= 0) {
+					element.scrollTop(10);
+
+				// When we're at the bottom, move up one pixel
 				} else if (scrollingLeft <= 0) {
-					console.log('bottom');
-					element.scrollTop(scrollHeight - apparentHeight - 1);
+					element.scrollTop(scrollHeight - apparentHeight - 10);
 				}
 			}
 
