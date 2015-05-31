@@ -105,21 +105,40 @@ a {
 	text-decoration: none;
 	border-bottom: 1px dashed rgba(57, 159, 177, 0.3);
 
-	-webkit-transition: border-color 150ms, color 150ms;
-	-moz-transition: border-color 150ms, color 150ms;
-	-ms-transition: border-color 150ms, color 150ms;
-	transition: border-color 150ms, color 150ms;
+	-webkit-transition-property: background-color, border-color, color;
+	-moz-transition-property: background-color, border-color, color;
+	-ms-transition-property: background-color, border-color, color;
+	transition-property: background-color, border-color, color;
+
+	-webkit-transition-duration: 125ms;
+	-moz-transition-duration: 125ms;
+	-ms-transition-duration: 125ms;
+	transition-duration: 125ms;
 }
 	a:focus,
 	a:hover {
-		color: #1791a6;
-		border-bottom-color: #1791a6;
+		color: #80d4a9;
+		border-bottom-color: #80d4a9;
 	}
 
-.center {
-	text-align: center;
+.share {
+	padding: 1.0em 1.2em;
+	background-color: #80d4a9;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	border-radius: 3px;
 }
+	.share:focus,
+	.share:hover {
+		color: #fff;
+		background-color: #55acee;
+	}
 
+
+
+/*Decorations*/
 .zigzag {
 	display: block;
 	clear: both;
@@ -144,7 +163,12 @@ a {
 		background-position: 50% -1em;
 	}
 
+
+
 /*Layout*/
+.center {
+	text-align: center;
+}
 @media screen and (max-width: 30em) {
 	.extra {
 		display: none;
@@ -263,7 +287,7 @@ pre code {
 	margin-bottom: 0;
 }
 .container p + p {
-	margin-top: 2.4em;
+	margin-top: 2em;
 }
 
 /*Background patterns*/
@@ -353,11 +377,12 @@ pre code {
 }
 .dummyform ul a {
 	display: block;
-	padding: 0.5em 0.7em 0.4em 0.7em;
+	padding: 0.4em 0.7em;
 	border-bottom: 1px solid #e1e3e5;
 }
 	.dummyform ul a:focus,
 	.dummyform ul a:hover {
+		color: #11b7d4;
 		background-color: rgba(40, 43, 46, 0.03);
 	}
 	.dummyform ul li:last-of-type a {

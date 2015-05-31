@@ -69,8 +69,9 @@ require_once 'Parsedown.php';
 				<div class="half">
 
 					<div class="container height-1">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
 					</div>
 
 				</div>
@@ -78,13 +79,75 @@ require_once 'Parsedown.php';
 				<div class="half">
 
 					<div class="container height-1" data-scroll-scope>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
 					</div>
 
 				</div>
 				<div class="clear"></div>
 			</div>
+
+
+
+			<h3>Real-life use case: search suggestions</h3>
+
+			<p>The document will stay still even when you scroll the results container to the end.</p>
+
+			<form class="dummyform pull">
+				<div class="dummyform-content">
+
+				<p><input type="search" value="something something"><input type="submit"></p>
+
+				<ul data-scroll-scope>
+					<li><a href=".">Search result 1</a></li>
+					<li><a href=".">Search result 2</a></li>
+					<li><a href=".">Search result 3</a></li>
+					<li><a href=".">Search result 4</a></li>
+					<li><a href=".">Search result 5</a></li>
+				</ul>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+				<div class="extra">
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+				</div>
+
+				</div>
+			</form>
+
+
+
+			<h3>Real-life use case: code block</h3>
+
+			<p></p>
+
+			<pre data-scroll-scope><code>/*A page with lots of code blocks could set a max-height for them*/
+pre {
+	overflow: auto;
+	max-height: 16em;
+}
+
+/*Lots of code*/
+.hljs,
+code {
+	display: inline-block;
+	color: #555;
+	background-color: #f6f6f6;
+	border-radius: 3px;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+}
+.hljs,
+pre code {
+	display: block;
+	padding: 1em;
+	overflow: auto;
+}</code></pre>
 
 
 
@@ -182,67 +245,6 @@ $(document).on('click', '[data-action="toggle-modal"]', function (e) {
 
 
 
-			<h3>Real-life use case: search suggestions</h3>
-
-			<p>The document will stay still even when you scroll the results container to the end.</p>
-
-			<form class="dummyform pull">
-				<div class="dummyform-content">
-
-				<p><input type="search" value="search term"><input type="submit"></p>
-
-				<ul data-scroll-scope>
-					<li><a href=".">Search result 1</a></li>
-					<li><a href=".">Search result 2</a></li>
-					<li><a href=".">Search result 3</a></li>
-					<li><a href=".">Search result 4</a></li>
-					<li><a href=".">Search result 5</a></li>
-				</ul>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-				<div class="extra">
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-				</div>
-
-				</div>
-			</form>
-
-
-
-			<h3>Real-life use case: code block</h3>
-
-			<p></p>
-
-			<pre data-scroll-scope><code>/*A page with lots of code blocks could set a max-height for them*/
-pre {
-	overflow: auto;
-	max-height: 16em;
-}
-
-/*Lots of code*/
-.hljs,
-code {
-	display: inline-block;
-	color: #555;
-	background-color: #f6f6f6;
-	border-radius: 3px;
-	padding-left: 0.3em;
-	padding-right: 0.3em;
-}
-.hljs,
-pre code {
-	display: block;
-	padding: 1em;
-	overflow: auto;
-}</code></pre>
-
-
-
 			<h3>Nested containers</h3>
 
 			<div class="pull">
@@ -280,6 +282,7 @@ pre code {
 				<h2>That's it</h2>
 				<p>Thanks for checking this out!</p>
 				<ul><li><a href="http://eiskis.net/"><span class="extra">More at </span>eiskis.net</a></li><li><a href="http://eiskis.net/"><img src="http://eiskis.net/pages/images/jerry.png" alt="Jerry Jäppinen" title="Jerry Jäppinen"></a></li><li><a href="http://twitter.com/Eiskis">@eiskis<span class="extra"> on Twitter</span></a></li></ul>
+				<p><a href="https://twitter.com/share?url=http%3A%2F%2Feiskis.net%2Fscroll-scope&amp;related=Eiskis&amp;via=Eiskis&amp;text=Simple%20scroll%20scoping%20fix" target="_blank" class="share">Share on Twitter</a></p>
 			</div>
 
 
@@ -301,6 +304,9 @@ pre code {
 
 			// Dummy form
 			$('.dummyform').on('click', 'a', function (e) {
+				e.preventDefault();
+			});
+			$('.dummyform').on('submit', function (e) {
 				e.preventDefault();
 			});
 
