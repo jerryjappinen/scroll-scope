@@ -42,253 +42,257 @@ require_once 'Parsedown.php';
 	</head>
 
 	<body>
-		<div class="zigzag"></div>
 		<div class="body">
+			<div class="zigzag"></div>
+			<div class="body-content">
 
-			<div class="readme">
-				<?php
-				$Parsedown = new Parsedown();
-				echo $Parsedown->text(file_get_contents('README.md'));
-				?>
-			</div>
-
-
-
-			<h2>Demos</h2>
-
-			<div class="pull">
-
-				<div class="half center">
-					<p>Default behavior</p>
+				<div class="readme">
+					<?php
+					$Parsedown = new Parsedown();
+					echo $Parsedown->text(file_get_contents('README.md'));
+					?>
 				</div>
-				<div class="half center">
-					<p><code>data-scroll-scope</code></p>
-				</div>
-				<div class="clear"></div>
 
-				<div class="half">
 
-					<div class="container height-1">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
+
+				<h2>Demos</h2>
+
+				<div class="pull">
+
+					<div class="half center">
+						<p>Default behavior</p>
+					</div>
+					<div class="half center">
+						<p><code>data-scroll-scope</code></p>
+					</div>
+					<div class="clear"></div>
+
+					<div class="half">
+
+						<div class="container height-1">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
+						</div>
+
 					</div>
 
-				</div>
+					<div class="half">
 
-				<div class="half">
+						<div class="container height-1" data-scroll-scope>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
+						</div>
 
-					<div class="container height-1" data-scroll-scope>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis.</p>
 					</div>
-
+					<div class="clear"></div>
 				</div>
-				<div class="clear"></div>
-			</div>
 
 
 
-			<h3>Real-life use case: search suggestions</h3>
+				<h3>Real-life use case: search suggestions</h3>
 
-			<p>The document will stay still even when you scroll the results container to the end.</p>
+				<p>The document will stay still even when you scroll the results container to the end.</p>
 
-			<form class="dummyform pull">
-				<div class="dummyform-content">
+				<form class="dummyform pull">
+					<div class="dummyform-content">
 
-				<p><input type="search" value="something something"><input type="submit"></p>
+					<p><input type="search" value="something something"><input type="submit"></p>
 
-				<ul data-scroll-scope>
-					<li><a href=".">Search result 1</a></li>
-					<li><a href=".">Search result 2</a></li>
-					<li><a href=".">Search result 3</a></li>
-					<li><a href=".">Search result 4</a></li>
-					<li><a href=".">Search result 5</a></li>
-				</ul>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-				<div class="extra">
+					<ul data-scroll-scope>
+						<li><a href=".">Search result 1</a></li>
+						<li><a href=".">Search result 2</a></li>
+						<li><a href=".">Search result 3</a></li>
+						<li><a href=".">Search result 4</a></li>
+						<li><a href=".">Search result 5</a></li>
+					</ul>
 
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
-				</div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
-				</div>
-			</form>
-
-
-
-			<h3>Real-life use case: code block</h3>
-
-			<p></p>
-
-			<pre data-scroll-scope><code>/*A page with lots of code blocks could set a max-height for them*/
-pre {
-	overflow: auto;
-	max-height: 16em;
-}
-
-/*Lots of code*/
-.hljs,
-code {
-	display: inline-block;
-	color: #555;
-	background-color: #f6f6f6;
-	border-radius: 3px;
-	padding-left: 0.3em;
-	padding-right: 0.3em;
-}
-.hljs,
-pre code {
-	display: block;
-	padding: 1em;
-	overflow: auto;
-}</code></pre>
-
-
-
-			<h3>Real-life use case: modal dialog</h3>
-
-			<div class="modal closed" data-scroll-scope="force">
-				<div class="modal-overlay-close" data-action="toggle-modal">
-					<div class="modal-content" data-scroll-scope="force">
-
-						<p>Scroll down or <a href="." data-action="toggle-modal">close this dialog</a>.</p>
-
-						<h3>Lorem ipsum</h3>
+					<div class="extra">
 
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+					</div>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+					</div>
+				</form>
 
-						<div class="extra">
+
+
+				<h3>Real-life use case: code block</h3>
+
+				<p></p>
+
+				<pre data-scroll-scope><code>/*A page with lots of code blocks could set a max-height for them*/
+	pre {
+		overflow: auto;
+		max-height: 16em;
+	}
+
+	/*Lots of code*/
+	.hljs,
+	code {
+		display: inline-block;
+		color: #555;
+		background-color: #f6f6f6;
+		border-radius: 3px;
+		padding-left: 0.3em;
+		padding-right: 0.3em;
+	}
+	.hljs,
+	pre code {
+		display: block;
+		padding: 1em;
+		overflow: auto;
+	}</code></pre>
+
+
+
+				<h3>Real-life use case: modal dialog</h3>
+
+				<div class="modal closed" data-scroll-scope="force">
+					<div class="modal-overlay-close" data-action="toggle-modal">
+						<div class="modal-content" data-scroll-scope="force">
+
+							<p>Scroll down or <a href="." data-action="toggle-modal">close this dialog</a>.</p>
+
+							<h3>Lorem ipsum</h3>
 
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+							<div class="extra">
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+							</div>
+
+							<p><a href="." data-action="toggle-modal">Close dialog</a></p>
 
 						</div>
-
-						<p><a href="." data-action="toggle-modal">Close dialog</a></p>
-
 					</div>
 				</div>
-			</div>
 
-			<p>Modal dialog implementations tend to scroll the document.</p>
+				<p>Modal dialog implementations tend to scroll the document.</p>
 
-			<p><a href="." data-action="toggle-modal">Show a modal dialog</a></p>
+				<p><a href="." data-action="toggle-modal">Show a modal dialog</a></p>
 
-			<p>In this quite trivial custom dialog implementation, we scope the scrolling in both the overall container and the content area to avoid this. We also want to use <code>force</code> to disable parent scrolling even when the areas do not overflow.</p>
+				<p>In this quite trivial custom dialog implementation, we scope the scrolling in both the overall container and the content area to avoid this. We also want to use <code>force</code> to disable parent scrolling even when the areas do not overflow.</p>
 
-			<p><strong>Note!</strong> When scroll events are blocked, <strong>mobile Safari also blocks click events for that element</strong>. This only happens when using <code>force</code>. To close the modal on overlay click, we must attach the click event handler to an element that does <strong>not</strong> use <code>data-scroll-scope</code>.</p>
+				<p><strong>Note!</strong> When scroll events are blocked, <strong>mobile Safari also blocks click events for that element</strong>. This only happens when using <code>force</code>. To close the modal on overlay click, we must attach the click event handler to an element that does <strong>not</strong> use <code>data-scroll-scope</code>.</p>
 
-			<p>The source looks like this:</p>
+				<p>The source looks like this:</p>
 
-			<pre><code class="language-html">&lt;div class="modal" <strong>data-scroll-scope="force"&gt;</strong>
-	&lt;div class="modal-overlay-close" <strong>data-action="toggle-modal"&gt;</strong>
-		&lt;div class="modal-content" <strong>data-scroll-scope="force"&gt;</strong>
-			...
+				<pre><code class="language-html">&lt;div class="modal" <strong>data-scroll-scope="force"&gt;</strong>
+		&lt;div class="modal-overlay-close" <strong>data-action="toggle-modal"&gt;</strong>
+			&lt;div class="modal-content" <strong>data-scroll-scope="force"&gt;</strong>
+				...
+			&lt;/div&gt;
 		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+	&lt;/div&gt;</code></pre>
 
-<pre><code class="language-js">// Quick custom toggle
-$(document).on('click', '[data-action="toggle-modal"]', function (e) {
-	e.preventDefault();
-	$('.modal').toggleClass('closed');
-});</code></pre>
+	<pre><code class="language-js">// Quick custom toggle
+	$(document).on('click', '[data-action="toggle-modal"]', function (event) {
+		event.preventDefault();
+		if (this === event.target) {
+			$('.modal').toggleClass('closed');
+		}
+	});</code></pre>
 
-			<pre><code class="language-css">.modal {
-	position: fixed;
-	z-index: 10;
-	overflow: hidden;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-}
-	.modal.closed {
-		display: none;
+				<pre><code class="language-css">.modal {
+		position: fixed;
+		z-index: 10;
+		overflow: hidden;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
 	}
-.modal-overlay-close {
-	position: fixed;
-	z-index: 15;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	cursor: pointer;
-}
-.modal-content {
-	position: fixed;
-	z-index: 20;
-	overflow: auto;
-	box-sizing: border-box;
-	top: 5%;
-	left: 5%;
-	width: 90%;
-	height: 30em;
-	max-height: 90%;
-	cursor: default;
+		.modal.closed {
+			display: none;
+		}
+	.modal-overlay-close {
+		position: fixed;
+		z-index: 15;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		cursor: pointer;
+	}
+	.modal-content {
+		position: fixed;
+		z-index: 20;
+		overflow: auto;
+		box-sizing: border-box;
+		top: 5%;
+		left: 5%;
+		width: 90%;
+		height: 30em;
+		max-height: 90%;
+		cursor: default;
 
-	background-color: #fff;
-	padding: 0.5em 1em;
-}</code></pre>
+		background-color: #fff;
+		padding: 0.5em 1em;
+	}</code></pre>
 
 
 
-			<h3>Nested containers</h3>
+				<h3>Nested containers</h3>
 
-			<div class="pull">
-				<div class="container height-1" data-scroll-scope>
-					<div class="container height-2" data-scroll-scope>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+				<div class="pull">
+					<div class="container height-1" data-scroll-scope>
+						<div class="container height-2" data-scroll-scope>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+						</div>
 					</div>
 				</div>
-			</div>
 
 
 
-			<h3>Impractical number of nested containers</h3>
+				<h3>Impractical number of nested containers</h3>
 
-			<div class="pull">
-				<div class="container height-1" data-scroll-scope>
-					<div class="container height-2" data-scroll-scope>
-						<div class="container height-3" data-scroll-scope>
-							<div class="container height-4" data-scroll-scope>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+				<div class="pull">
+					<div class="container height-1" data-scroll-scope>
+						<div class="container height-2" data-scroll-scope>
+							<div class="container height-3" data-scroll-scope>
+								<div class="container height-4" data-scroll-scope>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+
+
+
+				<div class="footer center">
+					<h2>That's it</h2>
+					<p>Thanks for checking this out!</p>
+					<ul><li><a href="http://eiskis.net/"><span class="extra">More at </span>eiskis.net</a></li><li><a href="http://eiskis.net/"><img src="http://eiskis.net/pages/images/jerry.png" alt="Jerry Jäppinen" title="Jerry Jäppinen"></a></li><li><a href="http://twitter.com/Eiskis">@eiskis<span class="extra"> on Twitter</span></a></li></ul>
+					<p><a href="https://twitter.com/share?url=http%3A%2F%2Feiskis.net%2Fscroll-scope&amp;related=Eiskis&amp;via=Eiskis&amp;text=Simple%20scroll%20scoping%20fix" target="_blank" class="share">Share on Twitter</a></p>
+				</div>
+
+
+
 			</div>
-
-
-
-			<div class="footer center">
-				<h2>That's it</h2>
-				<p>Thanks for checking this out!</p>
-				<ul><li><a href="http://eiskis.net/"><span class="extra">More at </span>eiskis.net</a></li><li><a href="http://eiskis.net/"><img src="http://eiskis.net/pages/images/jerry.png" alt="Jerry Jäppinen" title="Jerry Jäppinen"></a></li><li><a href="http://twitter.com/Eiskis">@eiskis<span class="extra"> on Twitter</span></a></li></ul>
-				<p><a href="https://twitter.com/share?url=http%3A%2F%2Feiskis.net%2Fscroll-scope&amp;related=Eiskis&amp;via=Eiskis&amp;text=Simple%20scroll%20scoping%20fix" target="_blank" class="share">Share on Twitter</a></p>
-			</div>
-
-
-
+			<div class="zigzag reverse"></div>
 		</div>
-		<div class="zigzag reverse"></div>
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -311,12 +315,11 @@ $(document).on('click', '[data-action="toggle-modal"]', function (e) {
 			});
 
 			// Modal dialog
-			$(document).on('click', '[data-action="toggle-modal"]', function (e) {
-				e.preventDefault();
-				$('.modal').toggleClass('closed');
-			});
-			$(document).on('click', '.modal-content', function (e) {
-				e.stopPropagation();
+			$(document).on('click', '[data-action="toggle-modal"]', function (event) {
+				event.preventDefault();
+				if (this === event.target) {
+					$('.modal').toggleClass('closed');
+				}
 			});
 
 		</script>

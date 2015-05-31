@@ -28,7 +28,7 @@
 		// NOTE: on super fast scroll events this sometimes fails
 		var killScrolling = function (event, force) {
 
-			// Preventing touchmove disables click events on mobile Safari, so user should use force
+			// Preventing touchmove disables click events on mobile Safari, rquiring user to force
 			if (force || event.type !== 'touchmove') {
 				event.preventDefault();
 				event.stopPropagation();
@@ -41,7 +41,7 @@
 		// Prevents parent element from scrolling when a child element is scrolled to its boundaries
 		var onScroll = function (event) {
 
-			// Event wasn't killed, label it legit listeners on parent levels
+			// Event has been evaluated on lower level and deemed legit
 			if (event.isLegitScroll) {
 				return true;
 			}
@@ -55,33 +55,30 @@
 
 			// Let targeted elements scroll parent when they're not scrollable at all
 			if (scrollHeight <= apparentHeight) {
-				if (force) {
-					killScrolling(event, force);
-				} else {
+				if (!force) {
 					return true;
 				}
+				killScrolling(event, force);
 			}
 
 			// Normalize fetching delta
 			var delta = (event.originalEvent.wheelDelta);
-			if (typeof delta === 'undefined') {
-				delta = event.originalEvent.detail;
-			}
+			// if (typeof delta === 'undefined') {
+			// 	delta = event.originalEvent.detail;
+			// }
 
 			// Intervene only if we know we're actually moving
-			if (delta < 0 || delta > 0) {
-				var goingUp = delta > 0;
+			var goingUp = delta > 0;
 
-				// Scrolling down, but this will take us past the bottom
-				if (!goingUp && -delta > (scrollHeight - apparentHeight - yPos)) {
-					element.scrollTop(this.scrollHeight);
-					return killScrolling(event, force);
+			// Scrolling down, but this will take us past the bottom
+			if (!goingUp && -delta > (scrollHeight - apparentHeight - yPos)) {
+				element.scrollTop(this.scrollHeight);
+				return killScrolling(event, force);
 
-				// Scrolling up, but this will take us past the top
-				} else if (goingUp && delta > yPos) {
-					element.scrollTop(0);
-					return killScrolling(event, force);
-				}
+			// Scrolling up, but this will take us past the top
+			} else if (goingUp && delta > yPos) {
+				element.scrollTop(0);
+				return killScrolling(event, force);
 			}
 
 			// Nothing intervened, I guess we're good
