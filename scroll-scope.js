@@ -27,11 +27,10 @@
 			if (event.type !== 'touchmove') {
 				event.preventDefault();
 				event.stopPropagation();
+				event.returnValue = false;
+				return false;
 			}
 
-			// Kill kill kill
-			event.returnValue = false;
-			return false;
 		};
 
 		// Prevents parent element from scrolling when a child element is scrolled to its boundaries
