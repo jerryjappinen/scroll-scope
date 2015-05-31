@@ -302,7 +302,7 @@ $(document).on('click', '[data-action="toggle-modal"]', function (event) {
 
 			// scroll-scope.js init
 			$(document).scrollScope({
-				elements: 'data-scroll-scope, pre code'
+				elements: '[data-scroll-scope], pre code'
 			});
 
 			// Syntax highlighting
