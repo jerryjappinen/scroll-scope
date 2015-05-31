@@ -22,7 +22,7 @@ Install with Bower:
 bower install scroll-scope
 ```
 
-Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope), demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope). Current version is 0.1.0.
+Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope) and demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope). If you find bugs or potential improvements, file issues or pull requests on GitHub. Current version is 0.1.0.
 
 
 
@@ -51,7 +51,7 @@ Include and initialize:
 </script>
 ```
 
-The plugin attaches itself to the document object (or any parent container you choose), so you don't need to bind it for any new scrollable elements you might load via AJAX or otherwise insert into the DOM after initialization.
+The plugin works declaratively, meaning that it's attached to the document object (or any parent container you choose) instead of individual scrollable containers. This means that any DOM elements that are added or removed after page load do not need to be bound separately. You can even toggle <code>force</code> on and off during runtime if you please.
 
 
 
@@ -63,7 +63,7 @@ You can change which elements and events are targeted by setting them upon initi
 $(document).scrollScope({
 	elements: '[data-scroll-scope]',
 	forcedElements: '[data-scroll-scope="force"]',
-	events: 'DOMMouseScroll mousewheel scroll touchmove'
+	events: 'DOMMouseScroll mousewheel scroll touchstart touchmove'
 });
 ```
 

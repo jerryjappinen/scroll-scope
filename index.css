@@ -9,6 +9,7 @@ html {
 	font-family: "Lato", "Helvetica Neue", "Helvetica", "Roboto", "Segoe UI", "Open Sans", "Arial", sans-serif;
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
+	cursor: default;
 }
 
 html,
@@ -260,6 +261,17 @@ code {
 	padding-left: 0.3em;
 	padding-right: 0.3em;
 }
+pre code span {
+	color: #e0e2e4;
+	-webkit-transition-property: color, background-color;
+	-moz-transition-property: color, background-color;
+	-ms-transition-property: color, background-color;
+	transition-property: color, background-color;
+	-webkit-transition-duration: 250ms;
+	-moz-transition-duration: 250ms;
+	-ms-transition-duration: 250ms;
+	transition-duration: 250ms;
+}
 .hljs,
 pre code {
 	display: block;
@@ -503,12 +515,28 @@ pre code {
 
 	background-color: rgba(0, 0, 0, 0.5);
 	cursor: pointer;
+
+	-webkit-transition: background-color 1000ms;
+	-moz-transition: background-color 1000ms;
+	-ms-transition: background-color 1000ms;
+	transition: background-color 1000ms;
 }
+	.modal-overlay:hover {
+		background-color: rgba(0, 0, 0, 0.6);
+
+		-webkit-transition-duration: 125ms;
+		-moz-transition-duration: 125ms;
+		-ms-transition-duration: 125ms;
+		transition-duration: 125ms;
+	}
 .modal-content {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
 	position: fixed;
 	z-index: 2;
 	overflow: auto;
-	box-sizing: border-box;
 	top: 5%;
 	left: 5%;
 	width: 90%;

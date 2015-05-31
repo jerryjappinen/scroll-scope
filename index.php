@@ -185,9 +185,9 @@ pre code {
 
 				<p><a href="." data-action="toggle-modal" class="button block">Open the demo dialog</a></p>
 
-				<p>In this quite trivial custom dialog implementation, we scope the scrolling in both the overall container and the content area to avoid this. We also want to use <code>force</code> to disable parent scrolling even when the areas do not overflow.</p>
+				<p>In this quite trivial custom dialog implementation, we scope the scrolling in both the overall container and the content area so the document maintains its position. We also want to use <code>force</code> to disable parent scrolling even when the areas do not overflow.</p>
 
-				<p><strong>Note!</strong> When scroll events are blocked, <strong>mobile Safari also blocks click events for that element</strong>. This only happens when using <code>force</code>. To close the modal on overlay click, we must attach the click event handler to an element that does <strong>not</strong> use <code>data-scroll-scope</code>.</p>
+				<p><strong>Note!</strong> When scroll events are blocked with <code>force</code>, <strong>mobile Safari also blocks click events for that element</strong>. To close the modal on overlay click, we must attach the click event handler to an element that does <strong>not</strong> use <code>data-scroll-scope</code>.</p>
 
 				<p>The source looks like this:</p>
 
@@ -200,48 +200,41 @@ pre code {
 
 <pre><code class="language-js">// Quick custom toggle
 $(document).on('click', '[data-action="toggle-modal"]', function (event) {
-	if (!$(this).is('.modal-overlay') || this === event.target) {
-		event.preventDefault();
-		$('.modal').toggleClass('closed');
-	}
+	event.preventDefault();
+	$('.modal').toggleClass('closed');
 });</code></pre>
 
 			<pre><code class="language-css">.modal {
 	position: fixed;
-	z-index: 10;
-	overflow: hidden;
-	left: 0;
-	top: 0;
+	z-index: 100;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+	left: 0;
+	top: 0;
+	overflow: hidden;
 }
 	.modal.closed {
 		display: none;
 	}
-.modal-overlay-close {
+.modal-overlay {
 	position: fixed;
-	z-index: 15;
+	z-index: 1;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 .modal-content {
 	position: fixed;
-	z-index: 20;
+	z-index: 2;
 	overflow: auto;
-	box-sizing: border-box;
 	top: 5%;
 	left: 5%;
 	width: 90%;
 	height: 30em;
 	max-height: 90%;
-	cursor: default;
-
 	background-color: #fff;
-	padding: 0.5em 1em;
 }</code></pre>
 
 
@@ -294,7 +287,7 @@ $(document).on('click', '[data-action="toggle-modal"]', function (event) {
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript" src="scroll-scope.js"></script>
+		<script type="text/javascript" src="scroll-scope-obj.js"></script>
 
 		<script type="text/javascript">
 
