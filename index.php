@@ -292,9 +292,10 @@ $(document).on('click', '[data-action="toggle-modal"]', function (event) {
 		<script type="text/javascript">
 
 			// scroll-scope.js init
-			$(document).scrollScope({
+			var myScrollScopeObject = $(document).scrollScope({
 				elements: '[data-scroll-scope], pre code'
-			});
+			}, true);
+			myScrollScopeObject.bind()
 
 			// Syntax highlighting
 			hljs.initHighlightingOnLoad();

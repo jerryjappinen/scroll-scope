@@ -39,7 +39,7 @@
 			// Magic
 
 			self.getTargetedElements = function () {
-				return self.mainContainer.find(self.settings.selector);
+				return self.mainContainer.find(self.selector);
 			};
 
 			// Get working selector that targets all items

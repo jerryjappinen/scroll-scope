@@ -68,6 +68,24 @@ $(document).scrollScope({
 ```
 
 
+### Advanced use
+
+If you need access to the `scrollScope` object, pass a second parameter to get it in return. You need to bind it explicitly yourself in this case:
+
+```js
+var myScrollScopeInstance = $(document).scrollScope({}, true)
+
+// Bind to document
+myScrollScopeInstance.bind();
+
+// Use the object for whatever you wish
+myScrollScopeInstance.getTargetedElements().css('background', 'red');
+
+// Detach from document if no longer needed
+myScrollScope.destroy();
+```
+
+
 
 ## Credits
 
