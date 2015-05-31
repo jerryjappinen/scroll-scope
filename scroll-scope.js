@@ -26,10 +26,10 @@
 			// Preventing touchmove disables click events on mobile Safari
 			if (event.type !== 'touchmove') {
 				event.preventDefault();
+				event.stopPropagation();
 			}
 
 			// Kill kill kill
-			event.stopPropagation();
 			event.returnValue = false;
 			return false;
 		};
