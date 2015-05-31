@@ -48,7 +48,7 @@
 			var force = element.is(settings.forcedElements);
 			var yPos = this.scrollTop;
 			var scrollHeight = this.scrollHeight;
-			var apparentHeight = element.outerHeight();
+			var apparentHeight = element.innerHeight();
 
 			// Let targeted elements scroll parent when they're not scrollable at all
 			if (scrollHeight <= apparentHeight) {
