@@ -54,8 +54,12 @@
 			var apparentHeight = element.outerHeight();
 
 			// Let targeted elements scroll parent when they're not scrollable at all
-			if (!force && scrollHeight <= apparentHeight) {
-				return true;
+			if (scrollHeight <= apparentHeight) {
+				if (force) {
+					killScrolling(event, force);
+				} else {
+					return true;
+				}
 			}
 
 			// Normalize fetching delta
