@@ -121,18 +121,37 @@ a {
 		border-bottom-color: #80d4a9;
 	}
 
-.share {
-	padding: 1.0em 1.2em;
+.button {
+	border-width: 0;
+	padding: 0.8em 1.4em;
 	background-color: #80d4a9;
 	color: #fff;
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 0.8em;
 	border-radius: 3px;
+	text-align: center;
+
+	-webkit-transition-duration: 750ms;
+	-moz-transition-duration: 750ms;
+	-ms-transition-duration: 750ms;
+	transition-duration: 750ms;
 }
-	.share:focus,
-	.share:hover {
+	.button.block {
+		display: block;
+	}
+	.button:focus,
+	.button:hover {
 		color: #fff;
+		background-color: #67e4c5;
+
+		-webkit-transition-duration: 125ms;
+		-moz-transition-duration: 125ms;
+		-ms-transition-duration: 125ms;
+		transition-duration: 125ms;
+	}
+	.button.share:focus,
+	.button.share:hover {
 		background-color: #55acee;
 	}
 
@@ -227,8 +246,8 @@ pre {
 	tab-size: 4;
 }
 code {
-	background-color: #f0f1f2;
-	color: #555;
+	background-color: #282b2e;
+	color: #e0e2e4;
 }
 .hljs,
 code {
@@ -258,14 +277,74 @@ pre code {
 
 
 /*Readme adjustments*/
+
+/*Download links*/
+.readme > h2:first-of-type + p + ul {
+	margin-bottom: 5em;
+	padding-left: 0;
+	list-style: none;
+}
+	.readme > h2:first-of-type + p + ul li {
+		width: 48%;
+		float: left;
+		clear: none;
+	}
+	.readme > h2:first-of-type + p + ul li:first-of-type {
+		margin-right: 4%;
+	}
+	.readme > h2:first-of-type + p + ul li a {
+		display: block;
+		border-width: 0;
+		padding: 0.4em;
+		background-color: #80d4a9;
+		color: #fff;
+		font-weight: bold;
+		border-radius: 3px;
+		text-align: center;
+
+		-webkit-transition-duration: 750ms;
+		-moz-transition-duration: 750ms;
+		-ms-transition-duration: 750ms;
+		transition-duration: 750ms;
+	}
+		.readme > h2:first-of-type + p + ul li a:focus,
+		.readme > h2:first-of-type + p + ul li a:hover {
+			color: #fff;
+			background-color: #67e4c5;
+
+			-webkit-transition-duration: 125ms;
+			-moz-transition-duration: 125ms;
+			-ms-transition-duration: 125ms;
+			transition-duration: 125ms;
+		}
+.readme > h2:first-of-type + p + ul + p {
+	clear: both;
+}
+@media screen and (min-width: 30em) {
+	.readme > h2:first-of-type + p + ul + p + pre {
+		max-width: 18em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.readme > h2:first-of-type + p,
+	.readme > h2:first-of-type + p + ul + p,
+	.readme > h2:first-of-type + p + ul + p + pre,
+	.readme > h2:first-of-type + p + ul + p + pre + p {
+		text-align: center;
+	}
+}
+
+/*Remove credits*/
 .readme > h2:last-of-type,
 .readme > p:last-of-type {
 	display: none;
 }
 
+
+
 /*Demo containers*/
 .container {
-	padding: 20px;
+	padding: 10px 20px;
 	display: block;
 	font-weight: bold;
 	border-radius: 3px;
@@ -399,29 +478,30 @@ pre code {
 /*Demo modal*/
 .modal {
 	position: fixed;
-	z-index: 10;
-	overflow: hidden;
-	left: 0;
-	top: 0;
+	z-index: 100;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+	left: 0;
+	top: 0;
+	overflow: hidden;
 }
 	.modal.closed {
 		display: none;
 	}
-.modal-overlay-close {
+.modal-overlay {
 	position: fixed;
-	z-index: 15;
+	z-index: 1;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
+
+	background-color: rgba(0, 0, 0, 0.5);
 	cursor: pointer;
 }
 .modal-content {
 	position: fixed;
-	z-index: 20;
+	z-index: 2;
 	overflow: auto;
 	box-sizing: border-box;
 	top: 5%;
@@ -433,7 +513,6 @@ pre code {
 	border-radius: 3px;
 	padding: 0.5em 1em;
 	box-shadow: 0 1px 2px rgba(40, 43, 46, 0.25);
-	cursor: default;
 }
 @media screen and (min-height: 40em) {
 	.modal-content {

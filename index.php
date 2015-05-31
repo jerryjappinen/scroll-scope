@@ -155,36 +155,35 @@ pre code {
 				<h3>Real-life use case: modal dialog</h3>
 
 				<div class="modal closed" data-scroll-scope="force">
-					<div class="modal-overlay-close" data-action="toggle-modal">
-						<div class="modal-content" data-scroll-scope="force">
+					<div class="modal-content" data-scroll-scope="force">
 
-							<p>Scroll down or <a href="." data-action="toggle-modal">close this dialog</a>.</p>
+						<p>Scroll down or <a href="." data-action="toggle-modal">close this dialog</a>.</p>
 
-							<h3>Lorem ipsum</h3>
+						<h3>Lorem ipsum</h3>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+						<div class="extra">
 
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-							<div class="extra">
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-							</div>
-
-							<p><a href="." data-action="toggle-modal">Close dialog</a></p>
 
 						</div>
+
+						<p><a href="." data-action="toggle-modal">Close dialog</a></p>
+
 					</div>
+					<div class="modal-overlay" data-action="toggle-modal"></div>
 				</div>
 
-				<p>Modal dialog implementations tend to scroll the document. Even <a href="http://getbootstrap.com/javascript/#modals" target="_blank">Bootstrap's modal dialog's</a> overlay scroll the document on mobile Safari!</p>
+				<p>Modal dialog implementations tend to scroll the document. Even <a href="http://getbootstrap.com/javascript/#modals" target="_blank">Bootstrap's modal dialog overlay</a> lets the scroll event through on mobile Safari!</p>
 
-				<p><a href="." data-action="toggle-modal">Open the demo modal dialog</a></p>
+				<p><a href="." data-action="toggle-modal" class="button block">Open the demo dialog</a></p>
 
 				<p>In this quite trivial custom dialog implementation, we scope the scrolling in both the overall container and the content area to avoid this. We also want to use <code>force</code> to disable parent scrolling even when the areas do not overflow.</p>
 
@@ -193,16 +192,15 @@ pre code {
 				<p>The source looks like this:</p>
 
 				<pre><code class="language-html">&lt;div class="modal" <strong>data-scroll-scope="force"&gt;</strong>
-	&lt;div class="modal-overlay-close" <strong>data-action="toggle-modal"&gt;</strong>
-		&lt;div class="modal-content" <strong>data-scroll-scope="force"&gt;</strong>
-			...
-		&lt;/div&gt;
+	&lt;div class="modal-content" <strong>data-scroll-scope="force"&gt;</strong>
+		...
 	&lt;/div&gt;
+	&lt;div class="modal-overlay" <strong>data-action="toggle-modal"&gt;</strong>&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
 <pre><code class="language-js">// Quick custom toggle
 $(document).on('click', '[data-action="toggle-modal"]', function (event) {
-	if (!$(this).is('.modal-overlay-close') || this === event.target) {
+	if (!$(this).is('.modal-overlay') || this === event.target) {
 		event.preventDefault();
 		$('.modal').toggleClass('closed');
 	}
@@ -285,7 +283,7 @@ $(document).on('click', '[data-action="toggle-modal"]', function (event) {
 					<h2>That's it</h2>
 					<p>Thanks for checking this out!</p>
 					<ul><li><a href="http://eiskis.net/"><span class="extra">More at </span>eiskis.net</a></li><li><a href="http://eiskis.net/"><img src="http://eiskis.net/pages/images/jerry.png" alt="Jerry Jäppinen" title="Jerry Jäppinen"></a></li><li><a href="http://twitter.com/Eiskis">@eiskis<span class="extra"> on Twitter</span></a></li></ul>
-					<p><a href="https://twitter.com/share?url=http%3A%2F%2Feiskis.net%2Fscroll-scope&amp;related=Eiskis&amp;via=Eiskis&amp;text=Simple%20scroll%20scoping%20fix" target="_blank" class="share">Share on Twitter</a></p>
+					<p><a href="https://twitter.com/share?url=http%3A%2F%2Feiskis.net%2Fscroll-scope&amp;related=Eiskis&amp;via=Eiskis&amp;text=Simple%20scroll%20scoping%20fix" target="_blank" class="button share">Share on Twitter</a></p>
 				</div>
 
 
@@ -318,10 +316,8 @@ $(document).on('click', '[data-action="toggle-modal"]', function (event) {
 
 			// Modal dialog
 			$(document).on('click', '[data-action="toggle-modal"]', function (event) {
-				if (!$(this).is('.modal-overlay-close') || this === event.target) {
-					event.preventDefault();
-					$('.modal').toggleClass('closed');
-				}
+				event.preventDefault();
+				$('.modal').toggleClass('closed');
 			});
 
 		</script>

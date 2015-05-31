@@ -13,8 +13,8 @@ This behavior varies a little from browser to browser but it doesn't work well o
 
 Direct download:
 
-- Production: [scroll-scope.min.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.min.js)
-- Development: [scroll-scope.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.js)
+- [scroll-scope.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.js)
+- [scroll-scope.min.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.min.js)
 
 Install with Bower:
 
