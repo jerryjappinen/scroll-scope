@@ -52,11 +52,9 @@
 			// Start handling
 			var element = $(this);
 			var force = element.is(settings.forcedElements);
-			var yPos = this.scrollTop;
 			var scrollHeight = this.scrollHeight;
 			var apparentHeight = element.outerHeight();
-
-			console.log(event.type, event, element);
+			var scrollingLeft = scrollHeight - apparentHeight - this.scrollTop;
 
 			// Let targeted elements scroll parent when they're not scrollable at all
 			if (scrollHeight <= apparentHeight) {
@@ -69,7 +67,24 @@
 			// Normalize fetching delta
 			var delta = event.originalEvent.wheelDelta;
 
-			// Firefox doesn't return delta, but we don't need it since Firefox works out of the box
+			// Mobile doesn't let us kill scrolling in some situations
+			if (
+				force &&
+				typeof delta === 'undefined' &&
+				(event.type === 'touchstart')
+			) {
+				console.log('evaluating');
+				if (this.scrollTop <= 0) {
+					console.log('top');
+					element.scrollTop(1);
+
+				} else if (scrollingLeft <= 0) {
+					console.log('bottom');
+					element.scrollTop(scrollHeight - apparentHeight - 1);
+				}
+			}
+
+			// Firefox doesn't return wheel delta, but we don't need it since Firefox works without our hacks
 			// if (typeof delta === 'undefined') {
 			// 	delta = event.originalEvent.detail;
 			// }
@@ -78,12 +93,12 @@
 			var goingUp = delta > 0;
 
 			// Scrolling down, but this will take us past the bottom
-			if (!goingUp && -delta > (scrollHeight - apparentHeight - yPos)) {
+			if (!goingUp && -delta > scrollingLeft) {
 				element.scrollTop(this.scrollHeight);
 				return killScrolling(event, force);
 
 			// Scrolling up, but this will take us past the top
-			} else if (goingUp && delta > yPos) {
+			} else if (goingUp && delta > this.scrollTop) {
 				element.scrollTop(0);
 				return killScrolling(event, force);
 			}
