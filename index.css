@@ -137,7 +137,7 @@ a {
 	.button:focus,
 	.button:hover {
 		color: #fff;
-		background-color: #67e4c5;
+		background-color: #5cccae;
 
 		-webkit-transition-duration: 125ms;
 		-moz-transition-duration: 125ms;
@@ -327,7 +327,7 @@ pre code {
 		.readme > h2:first-of-type + p + ul li a:focus,
 		.readme > h2:first-of-type + p + ul li a:hover {
 			color: #fff;
-			background-color: #67e4c5;
+			background-color: #5cccae;
 
 			-webkit-transition-duration: 125ms;
 			-moz-transition-duration: 125ms;
