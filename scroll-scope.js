@@ -12,7 +12,7 @@
 		var mainContainer = this;
 
 		// Some options
-		var events = targetEvents || 'DOMMouseScroll mousewheel scroll touchstart touchmove touchend';
+		var events = targetEvents || 'DOMMouseScroll mousewheel scroll touchmove';
 		var selector = targetSelector || '[data-scroll="scope"]';
 
 
@@ -43,14 +43,8 @@
 			var apparentHeight = element.outerHeight();
 
 			// Workaround for mobile
-			if (
-				event.type === 'touchstart' ||
-				event.type === 'touchmove' ||
-				event.type === 'touchend'
-			) {
-				if (scrollHeight <= apparentHeight) {
-					return self.killScrolling(event);
-				}
+			if (event.type === 'touchmove' && scrollHeight <= apparentHeight) {
+				return self.killScrolling(event);
 			}
 
 			// Normalize fetching delta
