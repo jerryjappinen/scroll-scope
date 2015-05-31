@@ -287,7 +287,7 @@ $(document).on('click', '[data-action="toggle-modal"]', function (event) {
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript" src="scroll-scope-obj.js"></script>
+		<script type="text/javascript" src="scroll-scope.js"></script>
 
 		<script type="text/javascript">
 
