@@ -88,38 +88,73 @@ require_once 'Parsedown.php';
 			<h3>Real-life use case: modal dialog</h3>
 
 			<div class="modal closed" data-scroll-scope="force">
-				<div class="modal-content" data-scroll-scope="force">
+				<div class="modal-overlay-close" data-action="toggle-modal">
+					<div class="modal-content" data-scroll-scope="force">
 
-					<p>Modal dialog implementations tend to scroll the document. In this trivial custom dialog, the code that avoids this problem looks like this:</p>
+						<p>Scroll down or <a href="." data-action="toggle-modal">close this dialog</a>.</p>
 
-					<pre><code>&lt;div class="modal" data-scroll-scope="force"&gt;
-	&lt;div class="modal-content" data-scroll-scope="force"&gt;
+						<h3>Lorem ipsum</h3>
 
-		...
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
-	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
-					<p>Scroll down or <a href="." data-action="modal">close this dialog</a>.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
-					<h3>Lorem ipsum</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+						<p><a href="." data-action="toggle-modal">Close dialog</a></p>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-					<p><a href="." data-action="modal">Close dialog</a></p>
-
+					</div>
 				</div>
 			</div>
 
-			<p><a href="." data-action="modal">Show a modal dialog</a></p>
+			<p>Modal dialog implementations tend to scroll the document.</p>
+
+			<p><a href="." data-action="toggle-modal">Show a modal dialog</a></p>
+
+			<p>In this quite trivial custom dialog implementation, we scope the scrolling in both the overall container and the content area to avoid this. We also want to use `force` to disable parent scrolling even when the areas do not overflow.</p>
+
+			<p><strong>Note!</strong> When scroll events are blocked, <strong>mobile Safari also blocks click events for that element</strong>. This is why we must attach the click event handler that closes the modal on overlay click to an element that doesn't use `data-scroll-scope`.</p>
+
+			<p>The source looks like this:</p>
+
+			<pre><code class="language-html">&lt;div class="modal" <strong>data-scroll-scope="force"&gt;</strong>
+	&lt;div class="modal-overlay-close" <strong>data-action="toggle-modal"&gt;</strong>
+		&lt;div class="modal-content" <strong>data-scroll-scope="force"&gt;</strong>
+			...
+		&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<pre><code class="language-css">.modal {
+	position: fixed;
+	z-index: 10;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+	.modal.closed {
+		display: none;
+	}
+.modal-content {
+	position: fixed;
+	z-index: 20;
+	overflow: auto;
+	box-sizing: border-box;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 30em;
+	max-height: 90%;
+
+	background-color: #fff;
+	padding: 0.5em 1em;
+}</code></pre>
 
 
 
@@ -244,7 +279,7 @@ pre code {
 			});
 
 			// Modal dialog
-			$(document).on('click', '[data-action="modal"]', function (e) {
+			$(document).on('click', '[data-action="toggle-modal"]', function (e) {
 				e.preventDefault();
 				$('.modal').toggleClass('closed');
 			});

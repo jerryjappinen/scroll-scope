@@ -295,6 +295,13 @@ pre code {
 	.modal.closed {
 		display: none;
 	}
+.modal-overlay-close {
+	z-index: 15;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
 .modal-content {
 	position: fixed;
 	z-index: 20;
@@ -328,7 +335,7 @@ pre code {
 		width: 60%;
 	}
 }
-@media screen and (min-width: 10em) {
+@media screen and (min-width: 100em) {
 	.modal-content {
 		left: 30%;
 		width: 40%;
