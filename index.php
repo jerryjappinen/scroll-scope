@@ -43,10 +43,12 @@ require_once 'Parsedown.php';
 	<body>
 		<div class="body">
 
-			<?php
+			<div class="readme">
+				<?php
 				$Parsedown = new Parsedown();
 				echo $Parsedown->text(file_get_contents('README.md'));
-			?>
+				?>
+			</div>
 
 
 
@@ -54,18 +56,17 @@ require_once 'Parsedown.php';
 
 			<div class="pull">
 
-				<div class="half">
-					<p>No scroll-scope:</p>
+				<div class="half center">
+					<p>Default behavior</p>
 				</div>
-				<div class="half">
-					<p>With <code>data-scroll-scope:</code></p>
+				<div class="half center">
+					<p><code>data-scroll-scope</code></p>
 				</div>
 				<div class="clear"></div>
 
 				<div class="half">
 
 					<div class="container height-1">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 					</div>
@@ -101,9 +102,13 @@ require_once 'Parsedown.php';
 
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+						<div class="extra">
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+						</div>
 
 						<p><a href="." data-action="toggle-modal">Close dialog</a></p>
 
@@ -117,7 +122,7 @@ require_once 'Parsedown.php';
 
 			<p>In this quite trivial custom dialog implementation, we scope the scrolling in both the overall container and the content area to avoid this. We also want to use `force` to disable parent scrolling even when the areas do not overflow.</p>
 
-			<p><strong>Note!</strong> When scroll events are blocked, <strong>mobile Safari also blocks click events for that element</strong>. This only happens when using `force`. To closes the modal on overlay click, we must attach the click event handler to an element that does <strong>not</strong> use `data-scroll-scope`.</p>
+			<p><strong>Note!</strong> When scroll events are blocked, <strong>mobile Safari also blocks click events for that element</strong>. This only happens when using <code>force</code>. To close the modal on overlay click, we must attach the click event handler to an element that does <strong>not</strong> use <code>data-scroll-scope</code>.</p>
 
 			<p>The source looks like this:</p>
 
@@ -126,7 +131,14 @@ require_once 'Parsedown.php';
 		&lt;div class="modal-content" <strong>data-scroll-scope="force"&gt;</strong>
 			...
 		&lt;/div&gt;
+	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+
+<pre><code class="language-js">// Quick custom toggle
+$(document).on('click', '[data-action="toggle-modal"]', function (e) {
+	e.preventDefault();
+	$('.modal').toggleClass('closed');
+});</code></pre>
 
 			<pre><code class="language-css">.modal {
 	position: fixed;
@@ -189,7 +201,11 @@ require_once 'Parsedown.php';
 
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
 
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+				<div class="extra">
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+				</div>
 
 				</div>
 			</form>
@@ -197,6 +213,8 @@ require_once 'Parsedown.php';
 
 
 			<h3>Real-life use case: code block</h3>
+
+			<p></p>
 
 			<pre data-scroll-scope><code>/*A page with lots of code blocks could set a max-height for them*/
 pre {
@@ -219,22 +237,6 @@ pre code {
 	display: block;
 	padding: 1em;
 	overflow: auto;
-}
-@media screen and (min-width: 46em) {
-	pre {
-		margin-left: -2em;
-		margin-right: -2em;
-	}
-}
-@media screen and (min-width: 54em) {
-	pre {
-		margin-left: -6em;
-		margin-right: -6em;
-	}
-	.hljs,
-	pre code {
-		padding: 1.5em 2em;
-	}
 }</code></pre>
 
 
@@ -272,10 +274,10 @@ pre code {
 
 
 
-			<div class="footer">
-				<h2>That's it!</h2>
+			<div class="footer center">
+				<h2>That's it</h2>
+				<p>Thanks for checking this out!</p>
 				<ul><li><a href="http://eiskis.net/"><span class="extra">More at </span>eiskis.net</a></li><li><a href="http://eiskis.net/"><img src="http://eiskis.net/pages/images/jerry.png" alt="Jerry Jäppinen" title="Jerry Jäppinen"></a></li><li><a href="http://twitter.com/Eiskis">@eiskis<span class="extra"> on Twitter</span></a></li></ul>
-				<p>Thanks for checking this out.</p>
 			</div>
 
 
@@ -303,9 +305,6 @@ pre code {
 			$(document).on('click', '[data-action="toggle-modal"]', function (e) {
 				e.preventDefault();
 				$('.modal').toggleClass('closed');
-			});
-			$(document).on('click', '.modal-content', function (e) {
-				e.stopPropagation();
 			});
 
 		</script>
