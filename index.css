@@ -366,10 +366,6 @@ pre code {
 	font-weight: bold;
 	border-radius: 3px;
 }
-.container .container {
-	border-width: 2px;
-	border-color: #fff;
-}
 @media screen and (min-width: 480px) {
 	.container {
 		padding-left: 40px;
@@ -392,21 +388,23 @@ pre code {
 }
 
 /*Background patterns*/
+.container {
+	color: #fff;
+}
 .container,
 .container .container .container {
-	background-color: #b7e6cf;
+	background-color: #9adebb;
 	background-image: repeating-linear-gradient(
 		45deg,
 		transparent,
 		transparent 20px,
-		#c4f1da 20px,
-		#c4f1da 40px
+		#aae8c8 20px,
+		#aae8c8 40px
 	);
 }
 
 .container .container,
 .container .container .container .container {
-	color: #fff;
 	background-color: #393d42;
 	background-image: repeating-linear-gradient(
 		-45deg,
@@ -417,7 +415,7 @@ pre code {
 	);
 }
 .container .container .container {
-	background-color: #d8f5e6;
+	background-color: #ccf3df;
 }
 .container .container .container .container {
 	background-color: #51575e;
