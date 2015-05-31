@@ -12,7 +12,7 @@
 		var mainContainer = this;
 
 		// Some options
-		var events = targetEvents || 'DOMMouseScroll mousewheel scroll touchstart touchmove';
+		var events = targetEvents || 'DOMMouseScroll mousewheel scroll touchstart touchmove touchend';
 		var selector = targetSelector || '[data-scroll="scope"]';
 
 
@@ -31,27 +31,51 @@
 		// Prevents parent element from scrolling when a child element is scrolled to its boundaries
 		self.onScroll = function (event) {
 
-			// Child that is being scrolled hasn't labeled the event as legit
-			if (!event.isLegitScroll) {
-				var element = $(this);
-				var scrollTop = this.scrollTop;
-				var delta = event.originalEvent.wheelDelta;
+			// Event wasn't killed, label it legit listeners on parent levels
+			if (event.isLegitScroll) {
+				return true;
+			}
+
+			// Start handling
+			var element = $(this);
+			var yPos = this.scrollTop;
+			var scrollHeight = this.scrollHeight;
+			var apparentHeight = element.outerHeight();
+
+			// Workaround for mobile
+			if (
+				event.type === 'touchstart' ||
+				event.type === 'touchmove' ||
+				event.type === 'touchend'
+			) {
+				if (scrollHeight <= apparentHeight) {
+					return self.killScrolling(event);
+				}
+			}
+
+			// Normalize fetching delta
+			var delta = (event.originalEvent.wheelDelta);
+			if (typeof delta === 'undefined') {
+				delta = event.originalEvent.detail;
+			}
+
+			// Intervene only if we know we're actually moving
+			if (delta < 0 || delta > 0) {
 				var goingUp = delta > 0;
 
 				// Scrolling down, but this will take us past the bottom
-				if (!goingUp && -delta > this.scrollHeight - element.outerHeight() - scrollTop) {
+				if (!goingUp && -delta > (scrollHeight - apparentHeight - yPos)) {
 					element.scrollTop(this.scrollHeight);
 					return self.killScrolling(event);
 
 				// Scrolling up, but this will take us past the top
-				} else if (goingUp && delta > scrollTop) {
+				} else if (goingUp && delta > yPos) {
 					element.scrollTop(0);
 					return self.killScrolling(event);
 				}
-
 			}
 
-			// Event wasn't killed, label it legit listeners on parent levels
+			// Nothing intervened, I guess we're good
 			event.isLegitScroll = true;
 			return true;
 		};

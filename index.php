@@ -12,7 +12,7 @@ require_once 'Parsedown.php';
 		<meta charset="utf-8">
 
 		<title>scroll-scope.js demo</title>
-		<link rel="icon" href="{{ paths.theme }}{{ iconurl }}" type="image/png">
+		<!-- <link rel="icon" href="icon.png" type="image/png"> -->
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -306,16 +306,52 @@ require_once 'Parsedown.php';
 
 			<?php
 				$Parsedown = new Parsedown();
-				echo $Parsedown->text(file_get_contents('README.md'));
+				// echo $Parsedown->text(file_get_contents('README.md'));
 			?>
 
 
 
 			<h2>Demos</h2>
 
-			<p>Commonly in scroll interaction, the user hovers their mouse cursor over a scrollable element and uses the trackpad or a mouse wheel to scroll the element up or down. When an element reaches its boundary, its parent element continues to be scrolled.</p>
 
-			<p>Usually the parent is the document, meaning that the user will continue moving down the page when attempting to scroll an individual container on the page, which is quite annoying. This is a common issue with dropdown menus and modal dialogs.</p>
+
+			<h3>Real-life use case: modal dialog</h3>
+
+			<div class="modal" data-action="modal" data-scroll="scope">
+				<div class="modal-content" data-scroll="scope">
+
+					<p>Modal dialog implementations tend to scroll the document. In this trivial custom dialog, the code that avoids this problem looks like this:</p>
+
+					<pre><code>&lt;div class="modal" data-scroll="scope"&gt;
+	&lt;div class="modal-content" data-scroll="scope"&gt;
+
+		...
+
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+					<p>Scroll down or <a href="." data-action="modal">close this dialog</a>.</p>
+
+					<h3>Lorem ipsum</h3>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
+
+					<p><a href="." data-action="modal">Close dialog</a></p>
+
+				</div>
+			</div>
+
+			<p><a href="." data-action="modal">Show a modal dialog</a></p>
+
+
 
 			<p>Compare yourself:</p>
 
@@ -379,44 +415,6 @@ require_once 'Parsedown.php';
 
 				</div>
 			</form>
-
-
-
-			<h3>Real-life use case: modal dialog</h3>
-
-			<div class="modal closed" data-action="modal" data-scroll="scope">
-				<div class="modal-content" data-scroll="scope">
-
-					<p>Modal dialog implementations tend to scroll the document. In this trivial custom dialog, the code that avoids this problem looks like this:</p>
-
-					<pre><code>&lt;div class="modal" data-scroll="scope"&gt;
-	&lt;div class="modal-content" data-scroll="scope"&gt;
-
-		...
-
-	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-					<p>Scroll down or <a href="." data-action="modal">close this dialog</a>.</p>
-
-					<h3>Lorem ipsum</h3>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam, nemo molestiae consequatur officiis magni eos aliquid incidunt perspiciatis. Laudantium dolorum reprehenderit corporis dignissimos eaque, possimus quam, sequi ab soluta.</p>
-
-					<p><a href="." data-action="modal">Close dialog</a></p>
-
-				</div>
-			</div>
-
-			<p><a href="." data-action="modal">Show a modal dialog</a></p>
 
 
 
@@ -484,7 +482,7 @@ pre code {
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript" src="scroll-scope.min.js"></script>
+		<script type="text/javascript" src="scroll-scope.js"></script>
 
 		<script type="text/javascript">
 
