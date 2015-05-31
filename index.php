@@ -185,7 +185,7 @@ pre code {
 
 			<p><a href="." data-action="toggle-modal">Show a modal dialog</a></p>
 
-			<p>In this quite trivial custom dialog implementation, we scope the scrolling in both the overall container and the content area to avoid this. We also want to use `force` to disable parent scrolling even when the areas do not overflow.</p>
+			<p>In this quite trivial custom dialog implementation, we scope the scrolling in both the overall container and the content area to avoid this. We also want to use <code>force</code> to disable parent scrolling even when the areas do not overflow.</p>
 
 			<p><strong>Note!</strong> When scroll events are blocked, <strong>mobile Safari also blocks click events for that element</strong>. This only happens when using <code>force</code>. To close the modal on overlay click, we must attach the click event handler to an element that does <strong>not</strong> use <code>data-scroll-scope</code>.</p>
 
