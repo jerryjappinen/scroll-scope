@@ -202,8 +202,8 @@ pre code {
 
 <pre><code class="language-js">// Quick custom toggle
 $(document).on('click', '[data-action="toggle-modal"]', function (event) {
-	event.preventDefault();
-	if (this === event.target) {
+	if (!$(this).is('.modal-overlay-close') || this === event.target) {
+		event.preventDefault();
 		$('.modal').toggleClass('closed');
 	}
 });</code></pre>
@@ -318,8 +318,8 @@ $(document).on('click', '[data-action="toggle-modal"]', function (event) {
 
 			// Modal dialog
 			$(document).on('click', '[data-action="toggle-modal"]', function (event) {
-				event.preventDefault();
-				if (this === event.target) {
+				if (!$(this).is('.modal-overlay-close') || if (!$(this).is('.modal-overlay-close') || this === event.target) {) {
+					event.preventDefault();
 					$('.modal').toggleClass('closed');
 				}
 			});

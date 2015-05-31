@@ -55,10 +55,10 @@
 
 			// Let targeted elements scroll parent when they're not scrollable at all
 			if (scrollHeight <= apparentHeight) {
-				if (!force) {
-					return true;
+				if (force) {
+					return killScrolling(event, force);
 				}
-				killScrolling(event, force);
+				return true;
 			}
 
 			// Normalize fetching delta
