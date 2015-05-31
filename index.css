@@ -405,6 +405,7 @@ pre code {
 
 .container .container,
 .container .container .container .container {
+	color: #fff;
 	background-color: #393d42;
 	background-image: repeating-linear-gradient(
 		-45deg,
