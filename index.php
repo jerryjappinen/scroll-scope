@@ -315,6 +315,9 @@ $(document).on('click', '[data-action="toggle-modal"]', function (e) {
 				e.preventDefault();
 				$('.modal').toggleClass('closed');
 			});
+			$(document).on('click', '.modal-content', function (e) {
+				e.stopPropagation();
+			});
 
 		</script>
 
