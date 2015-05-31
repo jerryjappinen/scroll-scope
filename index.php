@@ -182,9 +182,9 @@ pre code {
 					</div>
 				</div>
 
-				<p>Modal dialog implementations tend to scroll the document.</p>
+				<p>Modal dialog implementations tend to scroll the document. Even <a href="http://getbootstrap.com/javascript/#modals" target="_blank">Bootstrap's modal dialog's</a> overlay scroll the document on mobile Safari!</p>
 
-				<p><a href="." data-action="toggle-modal">Show a modal dialog</a></p>
+				<p><a href="." data-action="toggle-modal">Open the demo modal dialog</a></p>
 
 				<p>In this quite trivial custom dialog implementation, we scope the scrolling in both the overall container and the content area to avoid this. We also want to use <code>force</code> to disable parent scrolling even when the areas do not overflow.</p>
 
