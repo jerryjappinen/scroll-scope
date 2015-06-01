@@ -20,7 +20,7 @@ Install with Bower:
 bower install scroll-scope
 ```
 
-Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope) and demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope). If you find bugs or potential improvements, file issues or pull requests on GitHub. Current version is 0.0.9.
+Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope) and demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope). If you find bugs or potential improvements, file issues or pull requests on GitHub. Current version is 0.1.0.
 
 
 
@@ -70,19 +70,23 @@ $(document).scrollScope({
 
 ### Advanced use
 
-If you need access to the `scrollScope` object (for example to `getTargetedElements()` or `unbind()` it later), pass a second parameter and you'll get it in return. You need to bind the plugin to the document yourself in this case:
+If you need full access to `ScrollScope` object (for example to `getTargetedElements()` or `unbind()` it later), pass a second parameter and you'll get it in return. You need to bind the plugin to the document yourself in this case:
 
 ```js
-var myScrollScopeInstance = $(document).scrollScope({}, true)
+// Create new instance
+var myScrollScopeInstance = new ScrollScope({
+	options: 'here'
+});
 
 // Bind to document
-myScrollScopeInstance.bind();
+myScrollScopeInstance.bind(document);
 
 // Use the object for whatever you wish
+myScrollScopeInstance.mainContainer.css('background', 'blue');
 myScrollScopeInstance.getTargetedElements().css('background', 'red');
 
 // Detach from document if no longer needed
-myScrollScope.destroy();
+myScrollScope.unbind();
 ```
 
 

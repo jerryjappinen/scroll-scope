@@ -1,7 +1,7 @@
 {
   "name": "scroll-scope",
   "main": "scroll-scope.js",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "homepage": "http://eiskis.net/scroll-scope",
   "authors": [
     "Jerry Jäppinen <eiskis@gmail.com>"
