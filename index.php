@@ -20,7 +20,7 @@ require_once 'Parsedown.php';
 		<meta name="twitter:site" content="@Eiskis">
 		<meta name="twitter:title" content="scroll-scope.js">
 		<meta name="twitter:description" content="Small jQuery plugin to keep parent element still when scrolling an element to its boundary.">
-		<meta name="twitter:image" content="http://eiskis.net/scroll-scope/splash.png">
+		<meta name="twitter:image:src" content="http://eiskis.net/scroll-scope/splash.png">
 
 		<link rel="icon" href="icon.png" type="image/png">
 		<meta property="og:image" content="http://eiskis.net/scroll-scope/splash.png">
