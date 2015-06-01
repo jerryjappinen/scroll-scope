@@ -57,7 +57,9 @@ The plugin works declaratively, meaning that it's attached to the document objec
 
 ### Options
 
-You can change which elements and events are targeted by setting them upon initialization. Here are the defaults:
+You can change which elements and events are targeted by setting them upon initialization. Note that having events listed here does not mean they're blocked automatically, rather the plugin listens to these events and evaluates them when encountered.
+
+Here are the defaults:
 
 ```js
 $(document).scrollScope({
