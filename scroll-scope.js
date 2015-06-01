@@ -43,7 +43,6 @@
 			};
 
 			// Get working selector that targets all items
-			// FIXME: test this!
 			self.getSelector = function (selectors) {
 				var legits = [];
 				for (var i = 0; i < selectors.length; i++) {
