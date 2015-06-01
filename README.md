@@ -31,10 +31,10 @@ Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope) and dem
 Add the `data-scroll-scope` attribute to any scrollable element on the page:
 
 ```html
-<!-- Scope scrolling of an element when they overflow -->
+<!-- Scope scrolling of element when it overflows -->
 <div class="my-scrollable-element" data-scroll-scope>
 
-<!-- Scope scrolling of an element whether or not it overflows -->
+<!-- Scope scrolling of element whether or not it overflows -->
 <div class="another-scrollable-element" data-scroll-scope="force">
 ```
 
