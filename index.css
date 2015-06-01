@@ -336,7 +336,23 @@ pre code {
 }
 
 /*Download links*/
+
+/*Hide link to this page*/
+.readme > h1:first-of-type + p + p + p + p {
+	display: none;
+}
+
+/*Hide unnecessary download help*/
+.readme > h2:first-of-type + p,
+.readme > h2:first-of-type + p + ul + p {
+	display: none;
+}
+
+/*Download links*/
 .readme > h2:first-of-type + p + ul {
+	max-width: 32em;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: 5em;
 	padding-left: 0;
 	list-style: none;

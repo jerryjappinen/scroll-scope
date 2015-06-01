@@ -7,6 +7,8 @@ Commonly in scroll interaction, user hovers a mouse cursor over a scrollable ele
 
 This behavior varies a little from browser to browser but it doesn't work well on any of them. <em>scroll-scope.js</em> is a simple fix to this problem that shouldn't exist.
 
+See project home and demos on [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope).
+
 ## Get the plugin
 
 Direct download:
@@ -20,7 +22,7 @@ Install with Bower:
 bower install scroll-scope
 ```
 
-Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope) and demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope). If you find bugs or potential improvements, file issues or pull requests on GitHub. Current version is 0.1.0.
+Source is available on [GitHub](https://github.com/Eiskis/scroll-scope). If you find bugs or potential improvements, please file [issues or pull requests](https://github.com/Eiskis/scroll-scope/issues). Current version 0.1.0 is released under MIT.
 
 
 
