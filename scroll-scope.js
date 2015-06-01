@@ -148,7 +148,7 @@
 
 
 			// Remove listener from parent
-			self.destroy = function () {
+			self.unbind = function () {
 				return self.mainContainer.off(self.settings.events, self.selector, self.onScroll);
 			};
 

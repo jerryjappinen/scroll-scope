@@ -72,7 +72,7 @@ $(document).scrollScope({
 
 ### Advanced use
 
-If you need access to the `scrollScope` object, pass a second parameter to get it in return. You need to bind it explicitly yourself in this case:
+If you need access to the `scrollScope` object (for example to `getTargetedElements()` or `unbind()` it later), pass a second parameter and you'll get it in return. You need to bind the plugin to the document yourself in this case:
 
 ```js
 var myScrollScopeInstance = $(document).scrollScope({}, true)
