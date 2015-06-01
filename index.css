@@ -390,36 +390,28 @@ pre code {
 /*Background patterns*/
 .container {
 	color: #48534e;
-}
-.container,
-.container .container .container {
 	background-color: #9adebb;
-	background-image: repeating-linear-gradient(
-		45deg,
-		transparent,
-		transparent 20px,
-		#aae8c8 20px,
-		#aae8c8 40px
-	);
+	background-image: -webkit-repeating-linear-gradient(45deg, transparent, transparent 20px, #aae8c8 20px, #aae8c8 40px);
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, #aae8c8 20px, #aae8c8 40px);
 }
 
-.container .container,
-.container .container .container .container {
+.container .container {
 	color: #fff;
 	background-color: #393d42;
-	background-image: repeating-linear-gradient(
-		-45deg,
-		transparent,
-		transparent 40px,
-		#434950 40px,
-		#434950 80px
-	);
+	background-image: -webkit-repeating-linear-gradient(135deg, transparent, transparent 40px, #434950 40px, #434950 80px);
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent 40px, #434950 40px, #434950 80px);
 }
 .container .container .container {
+	color: #48534e;
 	background-color: #ccf3df;
+	background-image: -webkit-repeating-linear-gradient(135deg, transparent, transparent 20px, #aae8c8 20px, #aae8c8 40px);
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent 20px, #aae8c8 20px, #aae8c8 40px);
 }
 .container .container .container .container {
+	color: #fff;
 	background-color: #51575e;
+	background-image: -webkit-repeating-linear-gradient(45deg, transparent, transparent 40px, #434950 40px, #434950 80px);
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 40px, #434950 40px, #434950 80px);
 }
 
 
