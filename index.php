@@ -51,10 +51,17 @@ require_once 'Parsedown.php';
 			<div class="body-content">
 
 				<div class="readme">
+
 					<?php
+					// Epic hacks
+					$buttonsBefore = '## Get the plugin';
+					$buttons = '<div class="share-buttons">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://eiskis.net/scroll-scope" data-via="Eiskis">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\'://platform.twitter.com/widgets.js\';fjs.parentNode.insertBefore(js,fjs);}}(document, \'script\', \'twitter-wjs\');</script><script src="https://apis.google.com/js/platform.js" async defer></script><div class="g-plusone" data-size="medium" data-href="http://eiskis.net/scroll-scope"></div>
+</div>';
 					$Parsedown = new Parsedown();
-					echo $Parsedown->text(file_get_contents('README.md'));
+					echo $Parsedown->text(str_replace($buttonsBefore, $buttons."\n".$buttonsBefore, file_get_contents('README.md')));
 					?>
+
 				</div>
 
 
@@ -275,10 +282,17 @@ $(document).on('click', '[data-action="toggle-modal"]', function (event) {
 
 
 				<div class="footer center">
+
 					<h2>That's it</h2>
+
 					<p>Thanks for checking this out!</p>
+
 					<ul><li><a href="http://eiskis.net/"><span class="extra">More at </span>eiskis.net</a></li><li><a href="http://eiskis.net/"><img src="http://eiskis.net/pages/images/jerry.png" alt="Jerry Jäppinen" title="Jerry Jäppinen"></a></li><li><a href="http://twitter.com/Eiskis">@eiskis<span class="extra"> on Twitter</span></a></li></ul>
-					<p><a href="https://twitter.com/share?url=http%3A%2F%2Feiskis.net%2Fscroll-scope&amp;related=Eiskis&amp;via=Eiskis&amp;text=Simple%20scroll%20scoping%20fix" target="_blank" class="button share">Share on Twitter</a></p>
+
+					<!-- <p><a href="https://twitter.com/share?url=http%3A%2F%2Feiskis.net%2Fscroll-scope&amp;related=Eiskis&amp;via=Eiskis&amp;text=Simple%20scroll%20scoping%20fix" target="_blank" class="button share">Share on Twitter</a></p> -->
+
+					<?php echo $buttons; ?>
+
 				</div>
 
 

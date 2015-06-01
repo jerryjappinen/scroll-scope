@@ -7,8 +7,6 @@ Commonly in scroll interaction, user hovers a mouse cursor over a scrollable ele
 
 This behavior varies a little from browser to browser but it doesn't work well on any of them. <em>scroll-scope.js</em> is a simple fix to this problem that shouldn't exist.
 
-
-
 ## Get the plugin
 
 Direct download:

@@ -175,6 +175,15 @@ a {
 	.button.share:hover {
 		background-color: #55acee;
 	}
+	.share-buttons {
+		padding-left: 26px;
+	}
+	.share-buttons a,
+	.share-buttons div {
+		display: inline-block;
+		margin-left: 8px !important;
+		margin-right: 8px !important;
+	}
 
 
 
@@ -320,6 +329,11 @@ pre code {
 
 
 /*Readme adjustments*/
+
+.readme .share-buttons {
+	margin-top: 4%;
+	text-align: center;
+}
 
 /*Download links*/
 .readme > h2:first-of-type + p + ul {
