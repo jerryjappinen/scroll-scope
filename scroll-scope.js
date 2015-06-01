@@ -92,9 +92,12 @@
 
 				// Let targeted elements scroll parent when they're not scrollable at all
 				if (scrollHeight <= apparentHeight) {
-					if (force) {
+
+					// Unless we're using force
+					if (force && event.type !== 'touchstart') {
 						return self.killScrolling(event, force);
 					}
+
 					return true;
 				}
 
