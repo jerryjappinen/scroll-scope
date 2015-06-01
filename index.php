@@ -91,7 +91,7 @@ require_once 'Parsedown.php';
 
 
 
-				<h3>Real-life use case: search suggestions</h3>
+				<h3>Real-life use case: dropdown</h3>
 
 				<p>The document will stay still even when you scroll the results container to the end.</p>
 
