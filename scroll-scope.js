@@ -1,4 +1,4 @@
-/*! scroll-scope.js 0.1.0, MIT
+/*! scroll-scope.js 0.0.9, MIT
  https://github.com/Eiskis/scroll-scope
 */
 ;(function ($) {

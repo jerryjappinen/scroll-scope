@@ -22,7 +22,7 @@ Install with Bower:
 bower install scroll-scope
 ```
 
-Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope) and demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope). If you find bugs or potential improvements, file issues or pull requests on GitHub. Current version is 0.1.0.
+Check out the [source on GitHub](https://github.com/Eiskis/scroll-scope) and demos at [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope). If you find bugs or potential improvements, file issues or pull requests on GitHub. Current version is 0.0.9.
 
 
 
