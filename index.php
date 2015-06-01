@@ -12,6 +12,10 @@ require_once 'Parsedown.php';
 		<meta charset="utf-8">
 
 		<title>scroll-scope.js</title>
+        <meta property="og:title" content="scroll-scope.js">
+        <meta property="og:url" content="http://eiskis.net/scroll-scope">
+        <meta property="og:description" name="description" content="Small jQuery plugin to keep parent element still when scrolling an element to its boundary.">
+
 		<link rel="icon" href="icon.png" type="image/png">
 		<meta property="og:image" content="http://eiskis.net/scroll-scope/splash.png">
 

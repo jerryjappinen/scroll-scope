@@ -1,7 +1,7 @@
 
 # *scroll-scope.js*
 
-Small jQuery plugin to <strong>keep parent element still when scrolling an element to its boundary</strong>.
+Small jQuery plugin to **keep parent element still when scrolling an element to its boundary**.
 
 Commonly in scroll interaction, user hovers a mouse cursor over a scrollable element and uses trackpad or mouse wheel to scroll the element. When an element reaches its boundary, its parent element continues scrolling. Usually this means that the user will continue moving down the page when attempting to interact with an specific container. This is a common issue with dropdown menus and modal dialogs.
 
