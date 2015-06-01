@@ -12,6 +12,31 @@ html {
 	cursor: default;
 }
 
+::selection,
+.container .container ::selection,
+.container .container .container .container ::selection {
+    background-color: rgba(128, 212, 169, 0.25);
+}
+	::-moz-selection,
+	.container .container ::selection,
+	.container .container .container .container ::selection {
+	    background-color: rgba(128, 212, 169, 0.25);
+	}
+pre ::selection {
+	background-color: rgba(172, 243, 206, 0.25);
+}
+	pre ::-moz-selection {
+		background-color: rgba(172, 243, 206, 0.25);
+	}
+.container ::selection,
+.container .container .container ::selection {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+	.container ::-moz-selection,
+	.container .container .container ::-moz-selection {
+	    background-color: rgba(255, 255, 255, 0.5);
+	}
+
 html,
 body {
 	min-height: 100%;
@@ -96,7 +121,9 @@ h3 {
 a {
 	color: #11b7d4;
 	text-decoration: none;
-	border-bottom: 1px dashed rgba(57, 159, 177, 0.3);
+	border-color: rgba(57, 159, 177, 0.3);
+	border-style: dashed;
+	border-bottom-width: 1px;
 
 	-webkit-transition-property: background-color, border-color, color;
 	-moz-transition-property: background-color, border-color, color;
@@ -470,9 +497,11 @@ pre code {
 .dummyform ul a {
 	display: block;
 	padding: 0.4em 0.7em;
-	border-bottom: 1px solid #e1e3e5;
+	border-bottom-width: 1px;
+	border-color: #e1e3e5;
+	border-style: solid;
 }
-	.dummyform ul a:focus,
+	/*.dummyform ul a:focus,*/
 	.dummyform ul a:hover {
 		color: #11b7d4;
 		background-color: rgba(40, 43, 46, 0.03);
