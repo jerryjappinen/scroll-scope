@@ -134,7 +134,6 @@ pre {
 }
 
 /*Lots of code*/
-.hljs,
 code {
 	display: inline-block;
 	color: #555;
@@ -143,7 +142,6 @@ code {
 	padding-left: 0.3em;
 	padding-right: 0.3em;
 }
-.hljs,
 pre code {
 	display: block;
 	padding: 1em;
