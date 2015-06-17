@@ -107,6 +107,8 @@ require_once 'Parsedown.php';
 					<div class="clear"></div>
 				</div>
 
+				<p>When scrolling the container on the right, scrolling should stop when you get to the end and your document should stay still. For some browsers, this is also the default behavior.</p>
+
 
 
 				<h3>Real-life use case: dropdown</h3>
