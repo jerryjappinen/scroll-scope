@@ -41,11 +41,11 @@ Add the `data-scroll-scope` attribute to any scrollable element on the page:
 Include and initialize:
 
 ```html
-// jQuery comes first, then the plugin
+<!-- jQuery comes first, then the plugin -->
 <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="scroll-scope.min.js"></script>
 
-// Activate the plugin on your page
+<!-- Activate the plugin on your page -->
 <script type="text/javascript">
 	$(document).scrollScope();
 </script>
