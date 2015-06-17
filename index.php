@@ -63,7 +63,7 @@ require_once 'Parsedown.php';
 					// Epic hacks
 					$buttonsBefore = '## Get the plugin';
 					$buttons = '<div class="share-buttons">
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://eiskis.net/scroll-scope" data-via="Eiskis">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\'://platform.twitter.com/widgets.js\';fjs.parentNode.insertBefore(js,fjs);}}(document, \'script\', \'twitter-wjs\');</script><script src="https://apis.google.com/js/platform.js" async defer></script><div class="g-plusone" data-size="medium" data-href="http://eiskis.net/scroll-scope"></div>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://github.com/Eiskis/scroll-scope" data-via="Eiskis">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\'://platform.twitter.com/widgets.js\';fjs.parentNode.insertBefore(js,fjs);}}(document, \'script\', \'twitter-wjs\');</script><script src="https://apis.google.com/js/platform.js" async defer></script><div class="g-plusone" data-size="medium" data-href="https://github.com/Eiskis/scroll-scope"></div>
 </div>';
 					$Parsedown = new Parsedown();
 					echo $Parsedown->text(str_replace($buttonsBefore, $buttons."\n".$buttonsBefore, file_get_contents('README.md')));
