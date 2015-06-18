@@ -343,7 +343,7 @@ pre code {
 }
 
 /*Hide unnecessary download help*/
-.readme > h2:first-of-type + p,
+/*.readme > h2:first-of-type + p,*/
 .readme > h2:first-of-type + p + ul + p {
 	display: none;
 }
@@ -403,7 +403,8 @@ pre code {
 	.readme > h2:first-of-type + p,
 	.readme > h2:first-of-type + p + ul + p,
 	.readme > h2:first-of-type + p + ul + p + pre,
-	.readme > h2:first-of-type + p + ul + p + pre + p {
+	.readme > h2:first-of-type + p + ul + p + pre + p,
+	.readme > h2:first-of-type + p + ul + p + pre + p + p {
 		text-align: center;
 	}
 }

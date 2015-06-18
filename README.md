@@ -5,13 +5,13 @@ Small jQuery plugin to **keep parent element still when scrolling an element to 
 
 Commonly in scroll interaction, user hovers a mouse cursor over a scrollable element and uses trackpad or mouse wheel to scroll the element. When an element reaches its boundary, its parent element continues scrolling. Usually this means that the user will continue moving down the page when attempting to interact with an specific container. This is a common issue with dropdown menus and modal dialogs.
 
-This behavior varies a little from browser to browser but it doesn't work well on any of them. <em>scroll-scope.js</em> is a simple fix to this problem that shouldn't exist.
+This behavior is most prevalent in desktop browsers. To fix this problem that shouldn't even exist, <em>scroll-scope.js</em> exists.
 
 See project home and demos on [eiskis.net/scroll-scope](http://eiskis.net/scroll-scope).
 
 ## Get the plugin
 
-Direct download:
+Current version is *0.1.0*.
 
 - [scroll-scope.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.js)
 - [scroll-scope.min.js](https://raw.githubusercontent.com/Eiskis/scroll-scope/master/scroll-scope.min.js)
@@ -22,7 +22,7 @@ Install with Bower:
 bower install scroll-scope
 ```
 
-Source is available on [GitHub](https://github.com/Eiskis/scroll-scope). If you find bugs or potential improvements, please file [issues or pull requests](https://github.com/Eiskis/scroll-scope/issues). Current version 0.1.0 is released under MIT.
+File [issues or pull requests](https://github.com/Eiskis/scroll-scope/issues) to share potential improvements. The plugin is released under MIT. Source is available on [GitHub](https://github.com/Eiskis/scroll-scope). To contribute, clone the repo, make changes in *scroll-scope.js* and build the minified version with `gulp`.
 
 
 

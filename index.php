@@ -109,6 +109,8 @@ require_once 'Parsedown.php';
 
 				<p>When scrolling the container on the right, scrolling should stop when you get to the end and your document should stay still. For some browsers, this is also the default behavior.</p>
 
+				<p>Also keep in mind that especially mobile browsers allow the user to keep scrolling the parent if the child is at its respective boundary when initiating the scroll. If you want to block scrolling even in these cases, use <code>force</code> (see modal dialog example below).</p>
+
 
 
 				<h3>Real-life use case: dropdown</h3>
