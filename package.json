@@ -1,8 +1,8 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "main": "",
+  "name": "scroll-scope",
+  "version": "0.1.0",
+  "description": "Small jQuery plugin to keep parent element still when scrolling an element to its boundary.",
+  "main": "scroll-scope.js",
   "dependencies": {},
   "devDependencies": {
     "del": "^1.2.0",
@@ -18,7 +18,7 @@
     "type": "git",
     "url": ""
   },
-  "author": "",
-  "license": "",
-  "homepage": ""
+  "author": "Jerry Jäppinen <eiskis@gmail.com>",
+  "license": "MIT",
+  "homepage": "http://eiskis.net/scroll-scope"
 }
