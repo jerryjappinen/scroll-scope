@@ -1,7 +1,7 @@
 /*! scroll-scope.js 0.1.0, MIT
  https://github.com/Eiskis/scroll-scope
 */
-;(function () {
+;(function ($) {
 	'use strict';
 
 
@@ -233,4 +233,4 @@
 		}
 
 	}
-}());
+}(jQuery));
