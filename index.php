@@ -298,7 +298,7 @@ $(document).on('click', '[data-action="toggle-modal"]', function (event) {
 
 					<p>Thanks for checking this out!</p>
 
-					<ul><li><a href="http://eiskis.net/"><span class="extra">More at </span>eiskis.net</a></li><li><a href="http://eiskis.net/"><img src="http://eiskis.net/pages/images/jerry.png" alt="Jerry Jäppinen" title="Jerry Jäppinen"></a></li><li><a href="http://twitter.com/Eiskis">@eiskis<span class="extra"> on Twitter</span></a></li></ul>
+					<ul><li><a href="http://jerryjappinen.com/"><span class="extra">More at </span>jerryjappinen.com</a></li><li><a href="http://eiskis.net/"><img src="http://jerryjappinen.com/files/jerry.jpg" alt="Jerry Jäppinen" title="Jerry Jäppinen"></a></li><li><a href="http://twitter.com/Eiskis">@eiskis<span class="extra"> on Twitter</span></a></li></ul>
 
 					<!-- <p><a href="https://twitter.com/share?url=http%3A%2F%2Feiskis.net%2Fscroll-scope&amp;related=Eiskis&amp;via=Eiskis&amp;text=Simple%20scroll%20scoping%20fix" target="_blank" class="button share">Share on Twitter</a></p> -->
 
