@@ -4,6 +4,9 @@
   "description": "Small jQuery plugin to keep parent element still when scrolling an element to its boundary.",
   "main": "scroll-scope.js",
   "dependencies": {},
+  "scripts": {
+    "dev": "npx http-server"
+  },
   "devDependencies": {
     "del": "^1.2.0",
     "gulp": "^3.8.11",
@@ -13,7 +16,6 @@
     "gulp-uglify": "^1.2.0",
     "yargs": "^3.9.1"
   },
-  "scripts": {},
   "repository": {
     "type": "git",
     "url": ""
